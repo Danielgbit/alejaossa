@@ -4,7 +4,7 @@ html {
   font-weight: 300;
 }
 
-body{
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -17,6 +17,18 @@ body{
 
 .tracking-brand {
   letter-spacing: -1.2px;
+}
+
+.tracking-title {
+  letter-spacing: -1.0px;
+}
+
+.tracking-sub {
+  letter-spacing: -0.9px;
+}
+
+.tracking-paragraph {
+  letter-spacing: -0.6px;
 }
 
 .font-cormorant {
