@@ -11,9 +11,27 @@ body {
   background-color: rgb(255, 236, 254);
 }
 
+/* Colors Text */
+
 .text-nav {
   color: rgb(80, 5, 79);
 }
+
+.text-dark-01 {
+  color: var(--text-primary);
+}
+
+.text-light-01 {
+  color: #330645;
+}
+
+/* Backgrounds */
+
+.bg-dark-01 {
+  background-color: #f5dcff;
+}
+
+/* Letter spacing */
 
 .tracking-brand {
   letter-spacing: -1.2px;
@@ -31,12 +49,14 @@ body {
   letter-spacing: -0.6px;
 }
 
+/* Fonts text */
+
 .font-cormorant {
-  font-family: var(--font-cormorant-garamond) sans-serif;
+  font-family: var(--font-cormorant-garamond);
 }
 
 .font-lexend {
-  font-family: var(--font-lexend-deca) sans-serif;
+  font-family: var(--font-lexend-deca);
 }
 
 /* Background */
