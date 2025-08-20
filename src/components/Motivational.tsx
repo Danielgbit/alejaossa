@@ -8,7 +8,7 @@ interface MotivationalProps {
 const Motivational = ({ children, className }: MotivationalProps) => {
   return (
     <p
-      className={`py-10 text-center font-cormorant text-xl text-light-01 bg-dark-01 ${className || ""}`}
+      className={`py-10 text-center font-cormorant text-light-01 bg-dark-01 ${className || ""}`}
     >
       {children}
     </p>

@@ -15,7 +15,7 @@ const Empathy = () => {
           height={300}
         />
           <Motivational 
-            className="rounded-xl absolute bottom-[-30%] left-50"
+            className="rounded-xl text-2xl absolute bottom-[-35%] font-normal left-20 right-10"
             children="Entendemos exactamente lo que estás viviendo, y no estás solo/a en este camino."
           />
       </div>

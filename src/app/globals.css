@@ -31,6 +31,12 @@ body {
   background-color: #f5dcff;
 }
 
+/* Backgrounds Cards */
+
+.bg-card-01 {
+  background-color: #df8fff;
+}
+
 /* Letter spacing */
 
 .tracking-brand {
