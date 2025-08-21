@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Lexend_Deca } from "next/font/google";
+import { Ballet, Cormorant_Garamond, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -14,6 +14,12 @@ const lexend_deca = Lexend_Deca({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+const ballet = Ballet({
+  variable: "--font-ballet",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +29,7 @@ export default function RootLayout({
     <html lang="es">
       <Navbar />
       <body
-        className={`${cormorant_garamond.variable} ${lexend_deca.variable} antialiased`}
+        className={`${cormorant_garamond.variable} ${lexend_deca.variable} ${ballet.variable} font-sans} antialiased`}
       >
         {children}
       </body>

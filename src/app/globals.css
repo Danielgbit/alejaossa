@@ -65,4 +65,13 @@ body {
   font-family: var(--font-lexend-deca);
 }
 
+.font-ballet {
+  font-family: var(--font-ballet);
+}
+
+
 /* Background */
+
+.wave {
+    clip-path: polygon(0, 0, 200% 0, 100% 25%, 0 100%);
+}
