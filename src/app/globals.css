@@ -75,3 +75,14 @@ body {
 .wave {
     clip-path: polygon(0, 0, 200% 0, 100% 25%, 0 100%);
 }
+
+
+/* Swiper Styles */
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: black;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: black !important;
+}

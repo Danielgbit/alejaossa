@@ -2,6 +2,7 @@ import { Ballet, Cormorant_Garamond, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
+
 const cormorant_garamond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
   subsets: ["latin"],

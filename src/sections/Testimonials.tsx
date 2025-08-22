@@ -1,49 +1,65 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import Image from "next/image";
 import testimonials from "@/data/testimonials";
+import { useEffect, useRef } from "react";
+// Importa los estilos de Swiper (elige el CSS core o según el tema)
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper as SwiperType } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-const Testimonials = () => {
+
+
+import TestimonalCard from "@/components/TestimonalCard";
+
+export default function TestimonialCarousel({}) {
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useEffect(() => {
+    // Importa Swiper de manera dinámica solo en el cliente
+    import("swiper").then(({ Swiper }) => {
+      swiperRef.current = new Swiper(".swiper", {
+        // Configura tus opciones aquí
+        modules: [Navigation, Pagination, Autoplay],
+        direction: "horizontal",
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 5000,
+        },
+        slidesPerView: 1, // Perfecto para testimonios
+        spaceBetween: 30,
+      });
+    });
+
+    return () => {
+      if (swiperRef.current) {
+        swiperRef.current.destroy();
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-16 bg-light">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-cormorant font-bold text-primary mb-12">
-          Testimonios
-        </h2>
-
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 4000 }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-          }}
-        >
-          {testimonials.map((t) => (
-            <SwiperSlide key={t.id}>
-              <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                <div className="w-20 h-20 relative mb-4">
-                  <Image
-                    src={t.imageUrl}
-                    alt={t.name}
-                    fill
-                    className="object-cover rounded-full"
-                  />
-                </div>
-                <p className="text-sm text-gray-600 italic mb-4">“{t.text}”</p>
-                <h3 className="text-lg font-semibold text-dark-01">
-                  {t.name}
-                </h3>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className="swiper my-50">
+      <span className="font-cormorant text-7xl text-center block tracking-title">Testimonios</span>
+      <div className="swiper-wrapper mt-20 mb-30">
+        {testimonials.map((item) => (
+          <div key={item.id} className="swiper-slide">
+            <TestimonalCard item={item} />
+          </div>
+        ))}
       </div>
-    </section>
+      <div className="swiper-pagination"></div>
+      <div className="swiper-button-next"></div>
+      <div className="swiper-button-prev"></div>
+    </div>
   );
-};
-
-export default Testimonials;
+}
