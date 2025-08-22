@@ -1,6 +1,7 @@
 import { Ballet, Cormorant_Garamond, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 
 const cormorant_garamond = Cormorant_Garamond({
@@ -34,6 +35,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Footer/>
     </html>
   );
 }

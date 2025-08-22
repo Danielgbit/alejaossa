@@ -1,0 +1,10 @@
+
+/* Swiper Styles */
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: black;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: black !important;
+}

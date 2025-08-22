@@ -18,11 +18,11 @@ body {
 }
 
 .text-dark-01 {
-  color: var(--text-primary);
+  color: #330645;
 }
 
 .text-light-01 {
-  color: #330645;
+  color: #c570e6;
 }
 
 /* Backgrounds */
@@ -35,6 +35,24 @@ body {
 
 .bg-card-01 {
   background-color: #df8fff;
+}
+
+
+.bg-card-01 {
+  background-color: #df8fff;
+}
+
+
+/* Backgrounds Button */
+
+.bg-button-01 {
+  background-color: #e7aaff;
+}
+
+/* Background Components */
+
+.bg-reflection-01 {
+  background-color: #f2d2ffb9;
 }
 
 /* Letter spacing */
@@ -77,12 +95,8 @@ body {
 }
 
 
-/* Swiper Styles */
+/* Borders */
 
-.swiper-button-next:after, .swiper-button-prev:after {
-    color: black;
-}
-
-.swiper-pagination-bullet-active{
-  background-color: black !important;
+.border-dark-01 {
+  border-color: #52205c;
 }

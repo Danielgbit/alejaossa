@@ -5,6 +5,7 @@ import Services from "@/sections/Services";
 import AboutMe from "@/sections/AboutMe";
 import FAQ from "@/sections/FAQ";
 import Testimonials from "@/sections/Testimonials";
+import Reflection from "@/components/Reflection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <AboutMe/>
       <FAQ/>
       <Testimonials/>
+      <Reflection/>
     </>
-  );
+  )
 }

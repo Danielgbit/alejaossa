@@ -2,7 +2,7 @@ import React from "react";
 
 interface MotivationalProps {
   children: string;
-  className?: string; // Prop opcional para recibir estilos extra
+  className?: string;
 }
 
 const Motivational = ({ children, className }: MotivationalProps) => {

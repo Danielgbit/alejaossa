@@ -2,10 +2,10 @@
 
 import testimonials from "@/data/testimonials";
 import { useEffect, useRef } from "react";
-// Importa los estilos de Swiper (elige el CSS core o según el tema)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "@/app/styles/TestimonialsCarrousel.css";
 import { Swiper as SwiperType } from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 

@@ -20,7 +20,7 @@ const Hero = () => {
           Volviendo al origen
         </span>
         <div className="mt-10">
-          <Button children="Agendar cita" />
+          <Button className="bg-button-01 shadow-lg" children="Agendar cita" />
         </div>
       </div>
       <div className="w-[50%] flex justify-end">
