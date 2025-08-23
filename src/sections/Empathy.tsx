@@ -21,18 +21,18 @@ const Empathy = () => {
       </div>
       <div className="max-w-4xl mx-auto text-center">
         {/* Título principal */}
-        <h2 className="font-cormorant text-4xl pr-4 font-semibold text-left text-primary mb-6">
+        <h2 className="font-cormorant text-dark-01 text-4xl pr-4 font-semibold text-left text-primary mb-6">
           Ser padre o madre en la ciudad puede ser abrumador
         </h2>
 
         {/* Subtítulo empático */}
-        <p className="text-lg text-left pr-4 font-normal tracking-brand mb-8">
+        <p className="text-lg text-left text-dark-03 pr-4 font-normal tracking-brand mb-8">
           Es posible que estés sintiendo los desafíos que vienen con equilibrar
           tu familia, trabajo y vida personal.
         </p>
 
         {/* Lista de empatía específica */}
-        <ul className="list-disc text-left space-y-4 text-sm font-normal">
+        <ul className="list-disc text-dark-02 text-left space-y-4 text-sm font-normal">
           <li>Sentirte agotado/a por tener que hacer varias cosas a la vez.</li>
           <li>
             Preocuparte por si estás haciendo lo suficiente por tu hijo/a.

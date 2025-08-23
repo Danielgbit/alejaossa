@@ -12,8 +12,8 @@ const TestimonalCard = ({ item }: { item: Testimonial }) => {
         width={100}
         height={100}
       />
-      <cite className="font-cormorant text-xl mt-6">- {item.text}</cite>
-      <p className="mt-2 font-lexend uppercase tracking-title">"{item.name}"</p>
+      <cite className="font-cormorant text-dark-01 text-xl mt-6">- {item.text}</cite>
+      <p className="mt-2 font-lexend uppercase tracking-title text-dark-04">"{item.name}"</p>
     </div>
   );
 };

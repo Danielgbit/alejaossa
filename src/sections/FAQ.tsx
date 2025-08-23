@@ -13,7 +13,7 @@ const FAQ = () => {
   return (
     <section className="py-14">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="space-y-6 relative bg-dark-01 p-10 rounded-lg shadow-lg">
+        <div className="space-y-6 relative bg-light-02 p-10 rounded-lg shadow-lg">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -36,7 +36,7 @@ const FAQ = () => {
               )}
             </div>
           ))}
-          <h2 className="absolute top-[-40px] left-88 text-6xl font-cormorant font-light text-center text-primary tracking-title mb-12">
+          <h2 className="absolute text-dark-01 top-[-40px] left-88 text-6xl font-cormorant font-light text-center text-primary tracking-title mb-12">
             FAQ
           </h2>
         </div>

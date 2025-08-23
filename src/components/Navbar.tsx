@@ -7,15 +7,15 @@ const Navbar = () => {
   return (
     <div>
         <nav className="p-4">
-            <div className="container mx-auto flex justify-between items-center text-nav">
+            <div className="container mx-auto flex justify-between items-center text-dark-02">
                 <div className="w-[30%] uppercase text-3xl tracking-brand font-light">Aleja Ossa</div>
                 <ul className="flex justify-evenly w-[40%] font-lexend font-semilight"> 
-                    <li><a href="/" className="hover:text-white">Inicio</a></li>
-                    <li><a href="/about" className="hover:text-white">Blog</a></li>
-                    <li><a href="/contact" className="hover:text-white">Contacto</a></li>
+                    <li><a href="/" className="text-hover-light-01">Inicio</a></li>
+                    <li><a href="/about" className="text-hover-light-01">Blog</a></li>
+                    <li><a href="/contact" className="text-hover-light-01">Contacto</a></li>
                 </ul>
                 <div className='w-[30%] flex justify-end'>
-                    <Button className='border-[1px]' children={'Contactar'}/>
+                    <Button className='button-01' children={'Contactar'}/>
                 </div>
             </div>
         </nav>

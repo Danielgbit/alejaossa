@@ -1,0 +1,17 @@
+/* Letter spacing */
+
+.tracking-brand {
+  letter-spacing: -1.2px;
+}
+
+.tracking-title {
+  letter-spacing: -1px;
+}
+
+.tracking-sub {
+  letter-spacing: -0.9px;
+}
+
+.tracking-paragraph {
+  letter-spacing: -0.6px;
+}

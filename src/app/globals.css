@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 html {
   font-weight: 300;
 }
@@ -11,92 +12,7 @@ body {
   background-color: rgb(255, 236, 254);
 }
 
-/* Colors Text */
-
-.text-nav {
-  color: rgb(80, 5, 79);
-}
-
-.text-dark-01 {
-  color: #330645;
-}
-
-.text-light-01 {
-  color: #c570e6;
-}
-
-/* Backgrounds */
-
-.bg-dark-01 {
-  background-color: #f5dcff;
-}
-
-/* Backgrounds Cards */
-
-.bg-card-01 {
-  background-color: #df8fff;
-}
-
-
-.bg-card-01 {
-  background-color: #df8fff;
-}
-
-
-/* Backgrounds Button */
-
-.bg-button-01 {
-  background-color: #e7aaff;
-}
-
-/* Background Components */
-
-.bg-reflection-01 {
-  background-color: #f2d2ffb9;
-}
-
-/* Letter spacing */
-
-.tracking-brand {
-  letter-spacing: -1.2px;
-}
-
-.tracking-title {
-  letter-spacing: -1.0px;
-}
-
-.tracking-sub {
-  letter-spacing: -0.9px;
-}
-
-.tracking-paragraph {
-  letter-spacing: -0.6px;
-}
-
-/* Fonts text */
-
-.font-cormorant {
-  font-family: var(--font-cormorant-garamond);
-}
-
-.font-lexend {
-  font-family: var(--font-lexend-deca);
-}
-
-.font-ballet {
-  font-family: var(--font-ballet);
-}
-
-
-/* Background */
-
+/* Efectos */
 .wave {
-    clip-path: polygon(0, 0, 200% 0, 100% 25%, 0 100%);
-}
-
-
-/* Borders */
-
-.border-dark-01 {
-  border-color: #52205c;
+  clip-path: polygon(0, 0, 200% 0, 100% 25%, 0 100%);
 }

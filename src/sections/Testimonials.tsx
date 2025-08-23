@@ -49,7 +49,7 @@ export default function TestimonialCarousel({}) {
 
   return (
     <div className="swiper my-50">
-      <span className="font-cormorant text-7xl text-center block tracking-title">Testimonios</span>
+      <span className="font-cormorant text-7xl text-center block tracking-title text-dark-01">Testimonios</span>
       <div className="swiper-wrapper mt-20 mb-30">
         {testimonials.map((item) => (
           <div key={item.id} className="swiper-slide">

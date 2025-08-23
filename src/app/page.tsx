@@ -18,10 +18,13 @@ export default function Home() {
       />
       <Empathy />
       <Services/>
+      <Reflection textButton="Consultar agenda" children="La reflexión es un proceso esencial en el camino hacia la sanación. Nos
+        permite mirar hacia adentro."/>
       <AboutMe/>
       <FAQ/>
       <Testimonials/>
-      <Reflection/>
+      <Reflection textButton="Contactame" children='La reflexión es un proceso esencial en el camino hacia la sanación. Nos
+        permite mirar hacia adentro.'/>
     </>
   )
 }

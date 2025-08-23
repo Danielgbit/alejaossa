@@ -1,5 +1,13 @@
 import { Ballet, Cormorant_Garamond, Lexend_Deca } from "next/font/google";
+
+/* Styles import */
 import "./globals.css";
+import "./styles/Button.css";
+import "./styles/Fonts.css";
+import "./styles/LettersSpacing.css";
+import "./styles/Backgrounds.css";
+import "./styles/ColorsText.css";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

@@ -1,0 +1,45 @@
+
+/* Darks */
+
+.text-dark-01 {
+  color: #4b0d63;
+}
+
+.text-dark-02 {
+  color: #59057a;
+}
+
+.text-dark-03 {
+  color: #652f7a;
+}
+
+.text-dark-04 {
+  color: #2b053a;
+}
+
+/* Lights */
+
+.text-light-01 {
+  color: #c570e6;
+}
+
+.text-light-02 {
+  color: #f2d0ff;
+}
+
+.text-light-03 {
+  color: #dd87ff;
+}
+
+.text-light-04 {
+  color: #f8e7ff;
+}
+
+
+.text-hover-light-01:hover {
+  color: #9610cb;
+}
+
+.text-hover-light-02:hover {
+  color: #ebb8ff;
+}

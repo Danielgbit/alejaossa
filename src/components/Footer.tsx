@@ -5,15 +5,15 @@ import { Facebook, Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-01 text-light-01 pt-20 pb-6 mt-20">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[60%_20%_20%] gap-8 text-center md:text-left">
+    <footer className="bg-dark-02 pt-20 pb-6 mt-20">
+      <div className="max-w-6xl pb-20 text-light-04 mx-auto px-6 grid grid-cols-1 md:grid-cols-[60%_20%_20%] gap-8 text-center md:text-left">
         
         {/* Marca */}
         <div>
-          <h3 className="font-cormorant text-4xl tracking-brand font-semibold mb-4">
+          <h3 className="font-cormorant text-light-04 text-4xl tracking-brand font-semibold mb-4">
             Alejandra Ossa
           </h3>
-          <p className="text-sm font-light text-light-02 font-lexend">
+          <p className="text-sm font-light text-light-04 font-lexend">
             Acompañamiento holístico para reconectar con tu esencia, sanar y vivir en armonía.
           </p>
         </div>
@@ -23,9 +23,9 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-5 text-lg font-lexend tracking-brand">Explora</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-accent transition font-cormorant text-xl font-normal">Servicios</a></li>
-            <li><a href="#about" className="hover:text-accent transition font-cormorant text-xl font-normal">Sobre mí</a></li>
-            <li><a href="#contact" className="hover:text-accent transition font-cormorant text-xl font-normal">Contacto</a></li>
+            <li><a href="#services" className="text-hover-light-02 transition font-cormorant text-xl font-normal">Servicios</a></li>
+            <li><a href="#about" className="text-hover-light-02 transition font-cormorant text-xl font-normal">Sobre mí</a></li>
+            <li><a href="#contact" className="text-hover-light-02 transition font-cormorant text-xl font-normal">Contacto</a></li>
           </ul>
         </div>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
       </div>
 
       {/* Frase espiritual final */}
-      <div className="text-center mt-10 border-t border-light-02/30 pt-6">
+      <div className="text-center mt-10 border-t border-light-02/30 border-white pt-6">
         <p className="text-lg italic font-cormorant text-light-02">
           “La sanación comienza cuando regresas a ti mismo.”
         </p>

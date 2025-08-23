@@ -1,0 +1,13 @@
+/* Fonts text */
+
+.font-cormorant {
+  font-family: var(--font-cormorant-garamond);
+}
+
+.font-lexend {
+  font-family: var(--font-lexend-deca);
+}
+
+.font-ballet {
+  font-family: var(--font-ballet);
+}
