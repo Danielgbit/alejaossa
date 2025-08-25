@@ -10,7 +10,7 @@ import "./styles/ColorsText.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import Providers from "./Providers";
 
 const cormorant_garamond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
@@ -37,13 +37,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <Navbar />
       <body
         className={`${cormorant_garamond.variable} ${lexend_deca.variable} ${ballet.variable} font-sans} antialiased`}
       >
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
-      <Footer/>
     </html>
   );
 }

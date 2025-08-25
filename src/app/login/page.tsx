@@ -1,12 +1,19 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const { data: session } = useSession();
+
+  if(session?.user) {
+    return redirect("/dashboard");
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await signIn("credentials", {
@@ -35,7 +42,7 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full border p-2 rounded"
         />
-        <button type="submit" className="w-full py-2 bg-primary text-white rounded">
+        <button type="submit" className="w-full py-2 bg-dark-01 text-white rounded">
           Entrar
         </button>
       </form>
