@@ -1,33 +1,79 @@
-import { promises as fs } from "fs";
-import path from "path";
-import { NextResponse } from "next/server";
+import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
+import { NextRequest, NextResponse } from "next/server";
 
-const filePath = path.join(process.cwd(), "data", "blogs.json");
+async function GET(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
+  try {
+    const { slug } = params;
+    console.log("Buscando blog con slug:", slug);
+    
+    const data = await readBlogsData();
+    console.log("Datos leídos:", data);
+    
+    // Buscar el blog por slug
+    const blog = data.blogs.find((b: any) => b.slug === slug);
+    
+    if (!blog) {
+      console.log("Blog no encontrado para slug:", slug);
+      return NextResponse.json(
+        { error: 'Blog not found' },
+        { status: 404 }
+      );
+    }
+    
+    console.log("Blog encontrado:", blog);
+    return NextResponse.json(blog);
+  } catch (error) {
+    console.error("Error en GET /api/blogs/slug/[slug]:", error);
+    return NextResponse.json(
+      { error: 'Error reading blog' },
+      { status: 500 }
+    );
+  }
+}
+// POST - Crear nuevo blog
+async function POST(request: NextRequest) {
+  try {
+    const newBlog = await request.json();
+    
+    // Validaciones básicas
+    if (!newBlog.title || !newBlog.content) {
+      return NextResponse.json(
+        { error: 'Title and content are required' },
+        { status: 400 }
+      );
+    }
 
+    const data = await readBlogsData();
+    
+    // Crear nuevo blog con ID único
+    const blogWithId = {
+      id: Date.now(), // ID simple basado en timestamp
+      ...newBlog,
+      date: new Date().toISOString().split('T')[0]
+    };
 
-// GET → obtener todos los blogs
-export async function GET() {
-  const data = await fs.readFile(filePath, "utf-8");
-  const blogs = JSON.parse(data);
-  return NextResponse.json(blogs);
+    data.blogs.push(blogWithId);
+    
+    const success = await writeBlogsData(data);
+    
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Error saving blog' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json(blogWithId, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Error creating blog' },
+      { status: 500 }
+    );
+  }
 }
 
-// POST → crear un nuevo blog
-export async function POST(req: Request) {
-  const newBlog = await req.json();
 
-  const data = await fs.readFile(filePath, "utf-8");
-  const blogs = JSON.parse(data);
-
-  const blogWithId = {
-    id: blogs.length + 1,
-    date: new Date().toISOString(),
-    ...newBlog,
-  };
-
-  blogs.push(blogWithId);
-
-  await fs.writeFile(filePath, JSON.stringify(blogs, null, 2), "utf-8");
-
-  return NextResponse.json(blogWithId, { status: 201 });
-}
+export { GET, POST };
