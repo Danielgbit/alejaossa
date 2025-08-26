@@ -23,6 +23,7 @@ const BlogForm = ({ onSubmit }: BlogFormProps) => {
       .replace(/\s+/g, "-");
 
   const handleSubmit = (e: React.FormEvent) => {
+    
     e.preventDefault();
 
     // Validar que la imagen sea URL externa
@@ -50,55 +51,56 @@ const BlogForm = ({ onSubmit }: BlogFormProps) => {
     setImageUrl("");
   };
 
+
   return (
     <form
       onSubmit={handleSubmit}
       className="bg-light-01 text-dark-02 shadow-xl w-100 rounded-2xl p-6 flex flex-col gap-4"
     >
       <div>
-        <label className="block font-normal text-xl font-cormorant tracking-brand mb-1">Título</label>
+        <label className="block font-normal text-sm font-lexend tracking-brand mb-1">Título</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Escribe el título del blog..."
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="text-sm w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
           required
         />
       </div>
 
       <div>
-        <label className="block font-normal text-xl font-cormorant tracking-brand mb-1">Descripción</label>
+        <label className="block font-normal text-sm font-lexend tracking-brand mb-1">Descripción</label>
         <input
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Pequeño resumen del blog..."
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="text-sm w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
           required
         />
       </div>
 
       <div>
-        <label className="block font-normal text-xl font-cormorant tracking-brand mb-1">Contenido</label>
+        <label className="block font-normal text-sm font-lexend tracking-brand mb-1">Contenido</label>
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Escribe aquí el contenido completo..."
           rows={6}
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="text-sm w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
           required
         />
       </div>
 
       <div>
-        <label className="block font-normal text-xl font-cormorant tracking-brand mb-1">Imagen (solo URL externa)</label>
+        <label className="block font-normal text-sm font-lexend tracking-brand mb-1">Imagen (solo URL externa)</label>
         <input
           type="url"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
           placeholder="https://ejemplo.com/imagen.jpg"
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="text-sm w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
           required
         />
       </div>

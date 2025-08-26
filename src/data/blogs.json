@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Mi primer post",
+    "slug": "mi-primer-post",
+    "description": "Un repaso sobre cómo empecé a escribir en mi blog ✍️",
+    "content": "Este es el contenido completo de mi primer post. Aquí hablo sobre mi motivación, lo que espero lograr y cómo planeo mantener la constancia en el blog.",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "date": "2025-08-26T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Aprendiendo Next.js",
+    "slug": "aprendiendo-nextjs",
+    "description": "Mis primeros pasos con Next.js, React y Server Components.",
+    "content": "Hoy aprendí a usar Next.js con App Router. Me encanta cómo maneja rutas, layouts y la integración con React Server Components. Aunque al principio parece complicado, se hace más claro con la práctica.",
+    "imageUrl": "https://images.unsplash.com/photo-1581276879432-15a43f3f1a96",
+    "date": "2025-08-20T14:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "title": "Consejos para programar mejor",
+    "slug": "consejos-programar-mejor",
+    "description": "Algunos trucos que me ayudan a ser más productiva programando.",
+    "content": "Uno de mis consejos favoritos es dividir los problemas grandes en piezas pequeñas. También usar Git de manera disciplinada y comentar el código de forma clara. La práctica diaria hace la diferencia.",
+    "imageUrl": "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
+    "date": "2025-08-15T08:45:00.000Z"
+  }
+]

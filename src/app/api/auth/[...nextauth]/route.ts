@@ -11,13 +11,13 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         if (
-          credentials?.username === 'alejandra' &&
-          credentials?.password === '123456'
+          credentials?.username === process.env.ADMIN_USER &&
+          credentials?.password === process.env.ADMIN_PASS
         ) {
           return {
             id: "1",
-            name: 'admin',
-            email: '@123',
+            name: process.env.ADMIN_USER,
+            email: process.env.ADMIN_EMAIL,
           };
         }
         return null;

@@ -5,7 +5,7 @@ import { Facebook, Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-02 pt-20 pb-6 mt-20">
+    <footer className="bg-dark-02 pt-20 pb-6">
       <div className="max-w-6xl pb-20 text-light-04 mx-auto px-6 grid grid-cols-1 md:grid-cols-[60%_20%_20%] gap-8 text-center md:text-left">
         
         {/* Marca */}

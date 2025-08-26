@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button = ({ children, className } : ButtonProps) => {
   return (
-    <span className={`btn-base ${className || ''}`}>
+    <span className={`btn-base bg-black ${className || ''}`}>
       {children}
     </span>
   )
