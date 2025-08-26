@@ -40,6 +40,8 @@ export const blogService = {
     return response.json();
   },
 
+  
+
   // UPDATE blog
   async update(id: number, blogData: Partial<Blog>): Promise<Blog> {
     const response = await fetch(`${API_BASE_URL}/${id}`, {

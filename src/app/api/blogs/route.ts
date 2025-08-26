@@ -1,40 +1,18 @@
-import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
+// src/app/api/blogs/route.ts
 import { NextRequest, NextResponse } from "next/server";
+import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
+import {  } from '@/services/blogService';
 
-async function GET(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function GET() {
   try {
-    const { slug } = params;
-    console.log("Buscando blog con slug:", slug);
-    
     const data = await readBlogsData();
-    console.log("Datos leídos:", data);
-    
-    // Buscar el blog por slug
-    const blog = data.blogs.find((b: any) => b.slug === slug);
-    
-    if (!blog) {
-      console.log("Blog no encontrado para slug:", slug);
-      return NextResponse.json(
-        { error: 'Blog not found' },
-        { status: 404 }
-      );
-    }
-    
-    console.log("Blog encontrado:", blog);
-    return NextResponse.json(blog);
+    return NextResponse.json(data.blogs); // ← ¡IMPORTANTE! Devuelve data.blogs, no data
   } catch (error) {
-    console.error("Error en GET /api/blogs/slug/[slug]:", error);
-    return NextResponse.json(
-      { error: 'Error reading blog' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Error reading blogs" }, { status: 500 });
   }
 }
-// POST - Crear nuevo blog
-async function POST(request: NextRequest) {
+
+export async function POST(request: NextRequest) {
   try {
     const newBlog = await request.json();
     
@@ -48,11 +26,13 @@ async function POST(request: NextRequest) {
 
     const data = await readBlogsData();
     
-    // Crear nuevo blog con ID único
+    // Crear nuevo blog con ID único y slug
     const blogWithId = {
-      id: Date.now(), // ID simple basado en timestamp
+      id: Date.now(),
       ...newBlog,
-      date: new Date().toISOString().split('T')[0]
+      slug: newBlog.slug, // Generar slug si no existe
+      date: new Date().toISOString().split('T')[0],
+      author: newBlog.author || 'Anonymous' // Valor por defecto
     };
 
     data.blogs.push(blogWithId);
@@ -74,6 +54,3 @@ async function POST(request: NextRequest) {
     );
   }
 }
-
-
-export { GET, POST };
