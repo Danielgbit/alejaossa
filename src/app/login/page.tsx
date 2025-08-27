@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const { data: session } = useSession();
 
@@ -17,21 +18,29 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await signIn("credentials", {
+
+    setError("");
+
+    const result = await signIn("credentials", {
       username,
       password,
-      redirect: true,
-      callbackUrl: "/dashboard",
+      redirect: false,
     });
+
+    if (result?.error) {
+      setError("Usuario o contraseña incorrectos ❌");
+    } else if (result?.ok) {
+      redirect("/dashboard");
+    }
   };
 
   return (
     <div className="min-h-[500px] flex items-center justify-center bg-light-02">
       <form
         onSubmit={handleSubmit}
-        className="bg-light-03 p-8 rounded-xl shadow-md w-80 space-y-4"
+        className="bg-light-03 p-8 rounded-xl shadow-md w-80"
       >
-        <h1 className="text-xl font-semibold font-lexend tracking-title text-center text-dark-01">
+        <h1 className="text-xl font-semibold mb-5 font-lexend tracking-title text-center text-dark-01">
           Iniciar Sesión
         </h1>
         <input
@@ -39,16 +48,17 @@ export default function LoginPage() {
           placeholder="Usuario"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full border border-black text-sm tracking-brand p-2 rounded"
+          className="w-full border border-black text-sm tracking-[-0.3] p-2 rounded"
         />
         <input
           type="password"
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border text-sm tracking-brand p-2 rounded"
+          className="w-full border text-sm tracking-[-0.3] p-2 rounded mt-5"
         />
-        <button type="submit" className="w-full">
+        <span className="text-red-800 font-lexend text-xs">{error}</span>
+        <button type="submit" className="w-full mt-5">
           <Button children={"Entrar"} className="btn-base button-01" />
         </button>
       </form>

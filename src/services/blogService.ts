@@ -22,7 +22,6 @@ export const blogService = {
     return response.json();
   },
 
-
   //CREATE BLOG
   async create(blogData: Omit<Blog, "id">): Promise<Blog> {
     const response = await fetch("/api/blogs", {
@@ -40,11 +39,8 @@ export const blogService = {
     return response.json();
   },
 
-  
-
-  // UPDATE blog
-  async update(id: number, blogData: Partial<Blog>): Promise<Blog> {
-    const response = await fetch(`${API_BASE_URL}/${id}`, {
+  async update(slug: string, blogData: Partial<Blog>): Promise<Blog> {
+    const response = await fetch(`${API_BASE_URL}/slug/${slug}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -14,6 +14,11 @@ export default function BlogDetailPage({
 }) {
   const { data: blog, error, isLoading } = useBlogBySlug(params.slug);
   const { data: session } = useSession();
+  const navigate = useRouter();
+
+  const redirectEdit = () => {
+    navigate.push(`/blog/edit/${params.slug}`);
+  }
 
   if (isLoading) return <div className="p-4">Loading blog...</div>;
   if (error)
@@ -26,11 +31,14 @@ export default function BlogDetailPage({
     <div className="max-w-4xl mx-auto p-6">
       <BlogDetail blog={blog} />
       {session?.user && (
-        <BlogDeleteButton
-          onSuccess={() => router.push("/dashboard")}
-          slug={blog.slug}
-          title={blog.title}
-        />
+        <>
+          <BlogDeleteButton
+            onSuccess={() => router.push("/dashboard")}
+            slug={blog.slug}
+            title={blog.title}
+          />
+          <button className="bg-dark-01 rounded-full text-light-02 px-3 py-1 mx-5 cursor-pointer" onClick={redirectEdit}>Editar</button>
+        </>
       )}
     </div>
   );
