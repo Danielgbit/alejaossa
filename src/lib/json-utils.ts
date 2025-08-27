@@ -9,9 +9,15 @@ async function readBlogsData() {
     return JSON.parse(data);
   } catch (error) {
     console.error("Error reading blogs data:", error);
+    // Crea el archivo si no existe
+    if (error) {
+      const defaultData = { blogs: [] };
+      fs.writeFileSync(filepath, JSON.stringify(defaultData, null, 2));
+      return defaultData;
+    }
     return { blogs: [] };
   }
-};
+}
 
 async function writeBlogsData(data: any) {
   try {

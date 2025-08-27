@@ -1,55 +1,71 @@
 // src/app/api/blogs/route.ts
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
-import {  } from '@/services/blogService';
 
 export async function GET() {
   try {
     const data = await readBlogsData();
-    return NextResponse.json(data.blogs); // ← ¡IMPORTANTE! Devuelve data.blogs, no data
+    return NextResponse.json(data.blogs);
   } catch (error) {
-    return NextResponse.json({ error: "Error reading blogs" }, { status: 500 });
+    console.error("API Error:", error);
+    return NextResponse.json(
+      { error: "Error reading blogs" }, 
+      { status: 500 }
+    );
   }
 }
 
-export async function POST(request: NextRequest) {
+// API CREATE BLOG - POST
+export async function POST(request: Request) {
   try {
     const newBlog = await request.json();
     
     // Validaciones básicas
-    if (!newBlog.title || !newBlog.content) {
+    if (!newBlog.title || !newBlog.slug || !newBlog.content) {
       return NextResponse.json(
-        { error: 'Title and content are required' },
+        { error: "Faltan campos requeridos" },
         { status: 400 }
       );
     }
-
+    
     const data = await readBlogsData();
     
-    // Crear nuevo blog con ID único y slug
-    const blogWithId = {
-      id: Date.now(),
-      ...newBlog,
-      slug: newBlog.slug, // Generar slug si no existe
-      date: new Date().toISOString().split('T')[0],
-      author: newBlog.author || 'Anonymous' // Valor por defecto
-    };
-
-    data.blogs.push(blogWithId);
+    // Verificar si el slug ya existe
+    if (data.blogs.some((blog: any) => blog.slug === newBlog.slug)) {
+      return NextResponse.json(
+        { error: "Ya existe un blog con este slug" },
+        { status: 400 }
+      );
+    }
     
+    // Generar ID único
+    const newId = Math.max(...data.blogs.map((blog: any) => blog.id), 0) + 1;
+    
+    // Crear el objeto blog completo
+    const blogToAdd = {
+      ...newBlog,
+      id: newId,
+      date: new Date().toISOString()
+    };
+    
+    // Agregar a la lista
+    data.blogs.push(blogToAdd);
+    
+    // Guardar
     const success = await writeBlogsData(data);
     
     if (!success) {
       return NextResponse.json(
-        { error: 'Error saving blog' },
+        { error: "Error al guardar el blog" },
         { status: 500 }
       );
     }
-
-    return NextResponse.json(blogWithId, { status: 201 });
+    
+    return NextResponse.json(blogToAdd, { status: 201 });
   } catch (error) {
+    console.error("Error en POST /api/blogs:", error);
     return NextResponse.json(
-      { error: 'Error creating blog' },
+      { error: "Error interno del servidor" },
       { status: 500 }
     );
   }

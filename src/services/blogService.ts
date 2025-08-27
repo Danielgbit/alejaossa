@@ -1,18 +1,17 @@
 // src/services/blogService.ts
-import { Blog } from '@/types/blog';
+import { Blog } from "@/types/blog";
 
-const API_BASE_URL = '/api/blogs';
+const API_BASE_URL = "/api/blogs";
 
 export const blogService = {
-  
   // GET all blogs
   async getAll(): Promise<Blog[]> {
-    const response = await fetch(API_BASE_URL);
-    
+    const response = await fetch("/api/blogs");
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     return response.json();
   },
 
@@ -22,21 +21,22 @@ export const blogService = {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     return response.json();
   },
-  
-  // CREATE new blog
-  async create(blogData: Omit<Blog, 'id'>): Promise<Blog> {
-    const response = await fetch(API_BASE_URL, {
-      method: 'POST',
+
+
+  //CREATE BLOG
+  async create(blogData: Omit<Blog, "id">): Promise<Blog> {
+    const response = await fetch("/api/blogs", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(blogData),
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     return response.json();
   },
 
@@ -45,28 +45,28 @@ export const blogService = {
   // UPDATE blog
   async update(id: number, blogData: Partial<Blog>): Promise<Blog> {
     const response = await fetch(`${API_BASE_URL}/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(blogData),
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     return response.json();
   },
 
-  // DELETE blog
-  async delete(id: number): Promise<void> {
-    const response = await fetch(`${API_BASE_URL}/${id}`, {
-      method: 'DELETE',
+  // DELETE blog by slug
+  async deleteBySlug(slug: string): Promise<void> {
+    const response = await fetch(`${API_BASE_URL}/slug/${slug}`, {
+      method: "DELETE",
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-  }
+  },
 };
