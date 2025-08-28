@@ -45,6 +45,7 @@ export const useDeleteBlog = () => {
   });
 };
 
+// Hook Update blog by slug
 export const useUpdateBlog = () => {
   const queryClient = useQueryClient();
 
@@ -63,7 +64,7 @@ export const useUpdateBlog = () => {
         queryClient.invalidateQueries({ queryKey: ["blog", variables.slug] });
       }
 
-      // Actualizar el cache directamente
+      // Actualizar el cache directamente para mejor UX
       queryClient.setQueryData(["blog", updatedBlog.slug], updatedBlog);
     },
   });

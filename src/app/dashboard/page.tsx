@@ -2,23 +2,31 @@
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import CreateBlogForm from "@/components/Blog/CreateBlogForm";
+import { useEffect } from "react";
+import Loading from "@/components/Loading";
 
 function DashboardPage() {
-  const { data: session } = useSession();
+  const { status } = useSession();
 
-  if (!session?.user) return redirect("/login");
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      redirect("/login");
+    }
+  }, [status]);
 
   const router = useRouter();
 
   const handleSuccess = () => {
-    // Redirigir al dashboard después de crear el blog
     router.push("/blog");
   };
 
   const handleCancel = () => {
-    // Volver atrás
     router.back();
   };
+
+  if (status === "loading") {
+    return <Loading />;
+  }
 
   return (
     <div className="p-10 flex flex-col gap-6 justify-center items-center">

@@ -39,6 +39,7 @@ export const blogService = {
     return response.json();
   },
 
+  // UPDATE blog by slug
   async update(slug: string, blogData: Partial<Blog>): Promise<Blog> {
     const response = await fetch(`${API_BASE_URL}/slug/${slug}`, {
       method: "PUT",
@@ -49,7 +50,10 @@ export const blogService = {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(
+        errorData.error || `HTTP error! status: ${response.status}`
+      );
     }
 
     return response.json();
