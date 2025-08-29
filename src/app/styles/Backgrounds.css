@@ -51,7 +51,16 @@
 .bg-gradient-01 {
   background: linear-gradient(
     90deg,
-    rgba(232, 173, 255, 1) 0%,
-    rgba(98, 11, 133, 1) 100%
+    rgb(51, 7, 69) 0%,
+    rgb(224, 147, 255) 100%
+  );
+}
+
+
+.bg-gradient-02 {
+  background: linear-gradient(
+    90deg,
+    rgb(236, 187, 255) 0%,
+    rgb(215, 106, 255) 100%
   );
 }

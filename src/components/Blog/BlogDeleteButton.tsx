@@ -45,7 +45,7 @@ export default function BlogDeleteButton({
   };
 
   const getButtonClass = () => {
-    const baseClass = "transition-all duration-200 rounded";
+    const baseClass = "transition-all font-lexend uppercase tracking-title duration-200 rounded";
 
     if (isPending) {
       return `${baseClass} bg-gray-400 text-white px-3 py-1 opacity-50 ${className}`;
@@ -55,7 +55,7 @@ export default function BlogDeleteButton({
       return `${baseClass} bg-red-600 text-white px-3 py-1 ${className}`;
     }
 
-    return `${baseClass} bg-red-500 hover:bg-red-600 text-white px-3 py-1 ${className}`;
+    return `${baseClass} bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 ${className}`;
   };
 
   return (
@@ -73,7 +73,7 @@ export default function BlogDeleteButton({
       {isConfirming && (
         <button
           onClick={handleCancel}
-          className="bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 rounded text-sm"
+          className="bg-purple-800 hover:bg-gray-600 text-white px-2 py-1 rounded text-sm"
           type="button"
         >
           Cancelar

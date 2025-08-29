@@ -3,6 +3,8 @@
 
 import BlogDeleteButton from "@/components/Blog/BlogDeleteButton";
 import BlogDetail from "@/components/Blog/BlogDetail";
+import Button from "@/components/Button";
+import Loading from "@/components/Loading";
 import { useBlogBySlug } from "@/hooks/useBlogs";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -20,13 +22,13 @@ export default function BlogDetailPage({
     router.push(`/blog/edit/${params.slug}`);
   };
 
-  if (isLoading) return <div className="p-4">Loading blog...</div>;
+  if (isLoading) return <Loading />;
   if (error)
     return <div className="p-4 text-red-500">Error: {error.message}</div>;
   if (!blog) return <div className="p-4">Blog not found</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl bg-light-01 rounded-xl shadow-lg mx-auto p-6 my-25">
       <BlogDetail blog={blog} />
       {session?.user && (
         <>
@@ -35,12 +37,9 @@ export default function BlogDetailPage({
             slug={blog.slug}
             title={blog.title}
           />
-          <button
-            className="bg-dark-01 rounded-full text-light-02 px-3 py-1 mx-5 cursor-pointer"
-            onClick={redirectEdit}
-          >
-            Editar
-          </button>
+          <div onClick={redirectEdit} className="mt-4">
+            <Button children="editar" className="button-01" />
+          </div>
         </>
       )}
     </div>

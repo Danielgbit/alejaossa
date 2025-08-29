@@ -75,7 +75,7 @@ const Navbar = () => {
               </>
             ) : (
               <a
-                href="login"
+                href="/login"
                 className="text-hover-light-01 flex gap-2 bg-light-02 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
               >
                 Ingresar

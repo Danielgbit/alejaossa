@@ -43,3 +43,9 @@
 .text-hover-light-02:hover {
   color: #ebb8ff;
 }
+
+.text-gradient-01 {
+  background: linear-gradient(90deg, #f9cdff 50%, #240234 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
