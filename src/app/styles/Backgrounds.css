@@ -16,7 +16,6 @@
   background-color: #70547b;
 }
 
-
 .bg-light-01 {
   background-color: #e6a6ff;
 }
@@ -45,4 +44,14 @@
 
 .bg-reflection-01 {
   background-color: #f2d2ffb9;
+}
+
+/* Gradients */
+
+.bg-gradient-01 {
+  background: linear-gradient(
+    90deg,
+    rgba(232, 173, 255, 1) 0%,
+    rgba(98, 11, 133, 1) 100%
+  );
 }

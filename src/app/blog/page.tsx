@@ -13,7 +13,9 @@ export default function BlogList() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-6xl font-bold text-dark-01 font-cormorant text-center my-20">Blogs</h2>
+      <h2 className="text-6xl bg-gradient-01 w-[30%] mx-auto rounded-full px-20 py-5 font-bold text-light-04 font-cormorant text-center my-40 uppercase
+       tracking-title
+      ">Blogs</h2>
       
       {blogs?.length === 0 ? (
         <div className="text-center py-8">

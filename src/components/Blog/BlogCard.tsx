@@ -3,14 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+const BlogCard = ({ blog }: { blog: Blog }) => {
+  const formatDate = (dateString: string) => {
+    return new Intl.DateTimeFormat("es-ES", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }).format(new Date(dateString));
+  };
 
-const BlogCard = ({ blog } : { blog : Blog }) => {
   return (
-    <div
-      key={blog.id}
-      className="bg-white rounded-xl shadow-lg overflow-hidden"
-    >
-      <div className="w-full h-56 relative">
+    <div className="bg-white rounded-lg border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+      <div className="w-full h-48 relative">
         <Image
           src={blog.imageUrl}
           alt={blog.title}
@@ -18,16 +22,25 @@ const BlogCard = ({ blog } : { blog : Blog }) => {
           className="object-cover"
         />
       </div>
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold text-primary mb-2">
+
+      <div className="p-5">
+        <h2 className="font-semibold text-gray-800 mb-2 line-clamp-2">
           {blog.title}
         </h2>
-        <p className="text-gray-600 mb-4">{blog.description}</p>
+
+        <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+          {blog.description}
+        </p>
+        <div className="flex items-center text-xs text-gray-500 mb-2">
+          <span>{formatDate(blog.date)}</span>
+          <span className="mx-2">•</span>
+          <span>Aleja Ossa</span>
+        </div>
         <Link
           href={`/blog/${blog.slug}`}
-          className="text-accent font-medium hover:underline"
+          className="text-sm text-blue-600 hover:text-blue-800 font-medium"
         >
-          Leer más →
+          Leer artículo →
         </Link>
       </div>
     </div>
