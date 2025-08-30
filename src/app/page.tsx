@@ -10,7 +10,7 @@ import Reflection from "@/components/Reflection";
 export default function Home() {
   return (
     <>
-      <Hero />
+{/*       <Hero />
       <Motivational
         className="text-xl wave"
         children="En la quietud de tu ser encuentras la sabiduría que siempre ha habitado en
@@ -24,7 +24,7 @@ export default function Home() {
       <FAQ/>
       <Testimonials/>
       <Reflection textButton="Contactame" children='La reflexión es un proceso esencial en el camino hacia la sanación. Nos
-        permite mirar hacia adentro.'/>
+        permite mirar hacia adentro.'/> */}
     </>
   )
 }

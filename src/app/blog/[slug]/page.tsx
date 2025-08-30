@@ -28,19 +28,19 @@ export default function BlogDetailPage({
   if (!blog) return <div className="p-4">Blog not found</div>;
 
   return (
-    <div className="max-w-4xl bg-light-01 rounded-xl shadow-lg mx-auto p-6 my-25">
+    <div className="max-w-4xl bg-light-02 rounded-xl shadow-lg mx-auto p-6 my-25">
       <BlogDetail blog={blog} />
       {session?.user && (
-        <>
+        <div className="flex align-center text-sm gap-3 items-center">
           <BlogDeleteButton
-            onSuccess={() => router.push("/dashboard")}
+            onSuccess={() => router.push("/blog")}
             slug={blog.slug}
             title={blog.title}
           />
-          <div onClick={redirectEdit} className="mt-4">
-            <Button children="editar" className="button-01" />
+          <div onClick={redirectEdit}>
+            <Button children="editar" className="button-01"/>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

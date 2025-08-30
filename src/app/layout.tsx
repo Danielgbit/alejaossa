@@ -7,6 +7,8 @@ import "./styles/Fonts.css";
 import "./styles/LettersSpacing.css";
 import "./styles/Backgrounds.css";
 import "./styles/ColorsText.css";
+import "./styles/LoadingNavBar.css";
+
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -39,13 +41,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${cormorant_garamond.variable} ${lexend_deca.variable} ${ballet.variable} font-sans} antialiased`}
+        className={`flex flex-col justify-beetween w-full h-full min-h-screen ${cormorant_garamond.variable} ${lexend_deca.variable} ${ballet.variable} font-sans} antialiased`}
       >
         <QueryProvider>
           <Providers>
             <Navbar />
             {children}
-            <Footer />
+           {/*  <Footer /> */}
           </Providers>
         </QueryProvider>
       </body>

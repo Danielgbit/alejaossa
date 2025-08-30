@@ -56,7 +56,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-[500px] flex items-center justify-center bg-light-02">
+    <div className="min-h-[500px] py-40 flex items-center justify-center bg-light-02">
       <form
         onSubmit={handleSubmit}
         className="bg-light-03 p-8 rounded-xl shadow-md w-80"

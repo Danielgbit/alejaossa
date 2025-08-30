@@ -12,10 +12,10 @@ interface EditBlogFormProps {
   onCancel?: () => void;
 }
 
-export default function EditBlogForm({ 
-  blog, 
-  onSuccess, 
-  onCancel 
+export default function EditBlogForm({
+  blog,
+  onSuccess,
+  onCancel,
 }: EditBlogFormProps) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
@@ -54,9 +54,9 @@ export default function EditBlogForm({
     setError(null);
 
     updateBlog(
-      { 
-        slug: blog.slug, 
-        data: formData 
+      {
+        slug: blog.slug,
+        data: formData,
       },
       {
         onSuccess: (updatedBlog) => {
@@ -68,14 +68,17 @@ export default function EditBlogForm({
         },
         onError: (err) => {
           setError(err.message || "Error al actualizar el blog");
-        }
+        },
       }
     );
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6">Editar Blog: {blog.title}</h2>
+    <div className="max-w-2xl w-[35%] mx-auto p-6 bg-gradient-02 rounded-lg shadow-md">
+      <h2 className="text-2xl flex flex-col text-dark-02 font-cormorant font-bold mb-10 w-[80%] text-center mx-auto tracking-title">
+        <span className="font-lexend text-xl text-dark-02 mb-2">Editar</span>
+        {blog.title}
+      </h2>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -87,7 +90,7 @@ export default function EditBlogForm({
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-dark-01 font-lexend tracking-title mb-1"
           >
             Título *
           </label>
@@ -98,14 +101,14 @@ export default function EditBlogForm({
             value={formData.title}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
 
         <div>
           <label
             htmlFor="slug"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-dark-01 font-lexend tracking-title mb-1"
           >
             Slug *
           </label>
@@ -116,9 +119,9 @@ export default function EditBlogForm({
             value={formData.slug}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-[12px] text-dark-01 tracking-sub font-lexend mt-1">
             Identificador único en la URL (cambiar con precaución)
           </p>
         </div>
@@ -126,7 +129,7 @@ export default function EditBlogForm({
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-dark-01 font-lexend tracking-title mb-1"
           >
             Descripción *
           </label>
@@ -137,14 +140,14 @@ export default function EditBlogForm({
             onChange={handleChange}
             required
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
 
         <div>
           <label
             htmlFor="imageUrl"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-dark-01 font-lexend tracking-title mb-1"
           >
             URL de la Imagen *
           </label>
@@ -155,14 +158,14 @@ export default function EditBlogForm({
             value={formData.imageUrl}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
 
         <div>
           <label
             htmlFor="content"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-dark-01 font-lexend tracking-title mb-1"
           >
             Contenido *
           </label>
@@ -173,7 +176,7 @@ export default function EditBlogForm({
             onChange={handleChange}
             required
             rows={10}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
 
@@ -181,7 +184,7 @@ export default function EditBlogForm({
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+            className="px-4 py-2 border cursor-pointer border-purple-500 font-lexend text-xs border-2 rounded-md text-purple-800 transition-colors transition-800 hover:text-white hover:bg-purple-400"
           >
             Cancelar
           </button>
@@ -189,7 +192,7 @@ export default function EditBlogForm({
           <button
             type="submit"
             disabled={isLoading}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-purple-500 border border-2 border-purple-500 font-lexend font-semibold tracking-brand text-purple-50 rounded-xl cursor-pointer hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? "Guardando..." : "Guardar Cambios"}
           </button>

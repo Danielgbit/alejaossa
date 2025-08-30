@@ -43,5 +43,9 @@ export default function EditBlogPage({ params }: { params: { slug: string } }) {
     );
   }
 
-  return <EditBlogForm onCancel={handleOnCancel} blog={blog} />;
+  return (
+    <div className="my-40">
+      <EditBlogForm onCancel={handleOnCancel} blog={blog} />;
+    </div>
+  );
 }

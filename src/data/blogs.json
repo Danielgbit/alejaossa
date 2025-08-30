@@ -10,24 +10,6 @@
       "id": 1
     },
     {
-      "title": "Diseño Responsive con CSS Grid",
-      "slug": "diseno-responsive-css-grid",
-      "description": "Cómo crear layouts adaptables utilizando CSS Grid",
-      "content": "CSS Grid es un sistema de layout bidimensional que permite crear diseños complejos...",
-      "imageUrl": "https://picsum.photos/seed/cssgrid/600/400",
-      "date": "2025-08-30T14:30:15.750Z",
-      "id": 3
-    },
-    {
-      "title": "Optimización de Rendimiento Web",
-      "slug": "optimizacion-rendimiento-web",
-      "description": "Técnicas para mejorar la velocidad de carga de tu sitio web",
-      "content": "La optimización del rendimiento web es crucial para la experiencia del usuario...",
-      "imageUrl": "https://picsum.photos/seed/performance/600/400",
-      "date": "2025-08-31T09:45:22.330Z",
-      "id": 4
-    },
-    {
       "title": "Introducción a Node.js",
       "slug": "introduccion-nodejs",
       "description": "Construye aplicaciones del lado del servidor con JavaScript",

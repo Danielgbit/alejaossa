@@ -32,7 +32,7 @@ function DashboardPage() {
     <div className="p-10 flex my-25 flex-col gap-6 justify-center items-center">
       <h1 className="text-2xl font-bold font-lexend">Bienvenida Aleja!</h1>
       <p className="font-lexend tracking-sub text-sm">
-        Aquí puedes crear y editar tus blogs ✍️
+        Aquí puedes crear tus blogs ✍️
       </p>
       <CreateBlogForm onSuccess={handleSuccess} onCancel={handleCancel} />
     </div>

@@ -1,18 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import { useSession } from "next-auth/react";
 import Logout from "./Logout";
 import useScroll from "@/hooks/useScroll";
+import { Menu, X } from "lucide-react";
+import LoadingNavBar from "./LoadingNavBar";
 
 const Navbar = () => {
   const { data: session, status } = useSession();
   const { isScrolled, isVisible } = useScroll(30);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   if (status === "loading") {
     return (
-      <nav className={`
+      <nav
+        className={`
         p-4 
         bg-white 
         fixed 
@@ -23,74 +31,146 @@ const Navbar = () => {
         transition-transform 
         duration-300
         ease-in-out
-        ${isVisible ? 'translate-y-0' : '-translate-y-full'}
-        ${isScrolled ? 'shadow-md border-b border-gray-200' : ''}
-      `}>
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="w-[30%] h-8 bg-gray-200 rounded animate-pulse"></div>
-          <div className="w-[40%] h-6 bg-gray-200 rounded animate-pulse"></div>
-          <div className="w-[30%] h-10 bg-gray-200 rounded animate-pulse"></div>
-        </div>
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        ${isScrolled ? "shadow-md border-b border-gray-200" : ""}
+      `}
+      >
+        <LoadingNavBar/>
       </nav>
     );
   }
 
   return (
-    <nav className={`
-      p-4 
-      bg-white 
-      fixed 
-      top-0 
-      left-0 
-      w-full 
-      z-50 
-      transition-transform 
-      duration-300
-      ease-in-out
-      ${isVisible ? 'translate-y-0' : '-translate-y-full'}
-      ${isScrolled ? 'shadow-md border-b border-gray-200' : ''}
-    `}>
-      <div className="container mx-auto flex justify-between items-center text-dark-02">
-        <div className="w-[30%] uppercase text-3xl tracking-brand font-light">
-          Aleja Ossa
-        </div>
+    <>
+      <nav
+        className={`
+        p-4 
+        bg-white 
+        fixed 
+        top-0 
+        left-0 
+        w-full 
+        z-50 
+        transition-transform 
+        duration-300
+        ease-in-out
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        ${isScrolled ? "shadow-md border-b border-gray-200" : ""}
+      `}
+      >
+        <div className="container flex justify-between w-full items-center text-dark-02">
+          <div className="uppercase text-xl md:text-3xl tracking-brand font-light">
+            Aleja Ossa
+          </div>
 
-        <ul className={`flex justify-evenly font-lexend font-semilight ${session?.user ? "w-[40%]" : "w-[23%]"}`}>
-          <li className="flex justify-between w-full items-center">
-            <a href="/" className="text-hover-light-01 hover:text-blue-600 transition-colors">
+          {/* Menu para desktop */}
+          <ul
+            className={`md:flex justify-evenly font-lexend font-semilight hidden w-[40%]
+            }`}
+          >
+            <li className="flex justify-between w-full items-center">
+              <a
+                href="/"
+                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+              >
+                Inicio
+              </a>
+              <a
+                href="/blog"
+                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+              >
+                Blogs
+              </a>
+
+              {session?.user ? (
+                <>
+                  <a
+                    href="dashboard"
+                    className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+                  >
+                    Dashboard
+                  </a>
+                  <li className="list-none">
+                    <Logout />
+                  </li>
+                </>
+              ) : (
+                <a
+                  href="/login"
+                  className="text-hover-light-01 flex gap-2 bg-light-02 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
+                >
+                  Ingresar
+                </a>
+              )}
+            </li>
+          </ul>
+
+          <div className="w-[30%] justify-end md:flex hidden">
+            <Button className="button-01 hover:scale-105 transition-transform">
+              Contactar
+            </Button>
+          </div>
+
+          {/* Botón de menú móvil */}
+          <button
+            className="md:hidden flex items-center justify-center w-8 h-8"
+            onClick={toggleMobileMenu}
+            aria-label="Abrir menú"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Menú móvil */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed py-5 top-16 left-0 w-full h-full bg-white z-40 pt-4 px-4">
+          <div className="flex flex-col space-y-6">
+            <a
+              href="/"
+              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center hover:text-blue-600 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Inicio
             </a>
-            <a href="/blog" className="text-hover-light-01 hover:text-blue-600 transition-colors">
+            <a
+              href="/blog"
+              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center hover:text-blue-600 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Blogs
             </a>
 
             {session?.user ? (
               <>
-                <a href="dashboard" className="text-hover-light-01 hover:text-blue-600 transition-colors">
+                <a
+                  href="dashboard"
+                  className="text-hover-light-01 hover:text-blue-600 transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Dashboard
                 </a>
-                <li className="list-none">
+                <div className="py-2">
                   <Logout />
-                </li>
+                </div>
               </>
             ) : (
               <a
                 href="/login"
-                className="text-hover-light-01 flex gap-2 bg-light-02 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
+                className="text-hover-light-01 w-[50%] flex gap-2 font-lexend bg-light-02 px-3 py-2 text-xs rounded-full hover:bg-light-01 transition-colors mx-auto justify-center"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Ingresar
               </a>
             )}
-          </li>
-        </ul>
 
-        <div className="w-[30%] flex justify-end">
-          <Button className="button-01 hover:scale-105 transition-transform">
-            Contactar
-          </Button>
+            <button className="button-01 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
+              Contactar
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 };
 

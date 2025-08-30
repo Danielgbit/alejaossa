@@ -120,7 +120,7 @@ function BlogDetail({ blog }: { blog: Blog }) {
 
           <div className="flex items-center space-x-2 relative">
             <button 
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-dark-03 text-light-02 shadow-xl cursor-pointer hover:bg-dark-01 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full font-lexend uppercase tracking-brand font-normal hover:bg-purple-800 bg-dark-03 text-light-02 shadow-xl cursor-pointer hover:bg-dark-01 transition-colors"
               onClick={() => setShowShareOptions(!showShareOptions)}
             >
               <Share2 size={18} />

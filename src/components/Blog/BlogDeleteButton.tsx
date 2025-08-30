@@ -18,7 +18,7 @@ export default function BlogDeleteButton({
   const handleDelete = () => {
     if (!isConfirming) {
       setIsConfirming(true);
-      setTimeout(() => setIsConfirming(false), 3000); // Reset después de 3 segundos
+      setTimeout(() => setIsConfirming(false), 5000); // Reset después de 3 segundos
       return;
     }
 
@@ -45,17 +45,17 @@ export default function BlogDeleteButton({
   };
 
   const getButtonClass = () => {
-    const baseClass = "transition-all font-lexend uppercase tracking-title duration-200 rounded";
+    const baseClass = "transition-all rounded-full font-lexend uppercase tracking-title duration-200 rounded";
 
     if (isPending) {
-      return `${baseClass} bg-gray-400 text-white px-3 py-1 opacity-50 ${className}`;
+      return `${baseClass} bg-gray-400 text-white px-5 py-2 opacity-50 ${className}`;
     }
 
     if (isConfirming) {
-      return `${baseClass} bg-red-600 text-white px-3 py-1 ${className}`;
+      return `${baseClass} bg-red-600 text-white px-5 py-2 ${className}`;
     }
 
-    return `${baseClass} bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 ${className}`;
+    return `${baseClass} bg-purple-500 hover:bg-purple-600 text-white px-5 py-2 ${className}`;
   };
 
   return (
@@ -73,7 +73,7 @@ export default function BlogDeleteButton({
       {isConfirming && (
         <button
           onClick={handleCancel}
-          className="bg-purple-800 hover:bg-gray-600 text-white px-2 py-1 rounded text-sm"
+          className="bg-purple-400 hover:bg-purple-600 hover:text-purple-50 text-purple-900 px-5 py-2 rounded-full font-lexend tracking-sub"
           type="button"
         >
           Cancelar
