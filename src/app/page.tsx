@@ -10,13 +10,13 @@ import Reflection from "@/components/Reflection";
 export default function Home() {
   return (
     <>
-{/*       <Hero />
+      <Hero />
       <Motivational
         className="text-xl wave"
         children="En la quietud de tu ser encuentras la sabiduría que siempre ha habitado en
       ti. Tu sanación es un viaje de regreso a casa, a tu esencia verdadera."
       />
-      <Empathy />
+{/*       <Empathy />
       <Services/>
       <Reflection textButton="Consultar agenda" children="La reflexión es un proceso esencial en el camino hacia la sanación. Nos
         permite mirar hacia adentro."/>

@@ -59,13 +59,13 @@ const Navbar = () => {
       `}
       >
         <div className="container flex justify-between w-full items-center text-dark-02">
-          <div className="uppercase text-xl md:text-3xl tracking-brand font-light">
+          <div className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light">
             Aleja Ossa
           </div>
 
           {/* Menu para desktop */}
           <ul
-            className={`md:flex justify-evenly font-lexend font-semilight hidden w-[40%]
+            className={`md:flex justify-between font-lexend font-semilight hidden w-[40%]
             }`}
           >
             <li className="flex justify-between w-full items-center">
@@ -105,7 +105,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="w-[30%] justify-end md:flex hidden">
+          <div className="w-[20%] justify-end md:flex hidden">
             <Button className="button-01 hover:scale-105 transition-transform">
               Contactar
             </Button>
