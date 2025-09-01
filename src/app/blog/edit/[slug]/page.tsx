@@ -31,11 +31,11 @@ export default function EditBlogPage({ params }: { params: { slug: string } }) {
 
   if (!blog) {
     return (
-      <div className="container mx-auto py-8">
-        <div className="text-center">Blog no encontrado</div>
+      <div className="container mx-auto py-8 text-center">
+        <div className="text-dark-02">Blog no encontrado</div>
         <button
           onClick={() => router.push("/dashboard")}
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+          className="mt-4 bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
         >
           Volver al Dashboard
         </button>
@@ -44,8 +44,8 @@ export default function EditBlogPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="my-40">
-      <EditBlogForm onCancel={handleOnCancel} blog={blog} />;
+    <div className="px-4 sm:px-6 lg:px-8 my-16 sm:my-20 lg:my-28">
+      <EditBlogForm onCancel={handleOnCancel} blog={blog} />
     </div>
   );
 }

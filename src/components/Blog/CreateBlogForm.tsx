@@ -86,7 +86,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
   };
 
   return (
-    <div className="max-w-2xl w-[35%] mx-auto p-6 bg-gradient-02 rounded-lg shadow-md">
+    <div className="w-full md:max-w-sm max-w-4xl mx-auto p-6 bg-gradient-02 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-dark-01 font-cormorant text-center tracking-brand mb-8">
         Crear Nuevo Blog
       </h2>
@@ -98,6 +98,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Título */}
         <div>
           <label
             htmlFor="title"
@@ -117,6 +118,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
           />
         </div>
 
+        {/* Slug */}
         <div>
           <label
             htmlFor="slug"
@@ -139,6 +141,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
           </p>
         </div>
 
+        {/* Descripción */}
         <div>
           <label
             htmlFor="description"
@@ -158,6 +161,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
           />
         </div>
 
+        {/* Imagen */}
         <div>
           <label
             htmlFor="imageUrl"
@@ -177,6 +181,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
           />
         </div>
 
+        {/* Contenido */}
         <div>
           <label
             htmlFor="content"
@@ -196,12 +201,13 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
           />
         </div>
 
-        <div className="flex justify-end space-x-3 pt-4">
+        {/* Botones */}
+        <div className="flex flex-col md:flex-row justify-end gap-3 pt-4">
           {onCancel && (
             <button
               type="button"
               onClick={onCancel}
-              className="px-4 py-2 border cursor-pointer border-purple-500 font-lexend text-xs border-2 rounded-md text-purple-800 transition-colors transition-800 hover:text-white hover:bg-purple-400"
+              className="px-4 py-2 border cursor-pointer border-purple-500 font-lexend text-xs border-2 rounded-md text-purple-800 transition-colors duration-300 hover:text-white hover:bg-purple-400"
             >
               Cancelar
             </button>

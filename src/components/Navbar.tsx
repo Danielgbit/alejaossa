@@ -130,24 +130,24 @@ const Navbar = () => {
           <div className="flex flex-col space-y-6">
             <a
               href="/"
-              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center hover:text-blue-600 transition-colors py-2"
+              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inicio
             </a>
             <a
               href="/blog"
-              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center hover:text-blue-600 transition-colors py-2"
+              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blogs
             </a>
 
             {session?.user ? (
-              <>
+              <div className="flex flex-col justify-center items-center gap-3">
                 <a
                   href="dashboard"
-                  className="text-hover-light-01 hover:text-blue-600 transition-colors py-2"
+                  className="text-hover-light-01 font-lexend text-dark-03 tracking-brand text-sm text-center w-[50%] mx-auto bg-light-02 py-1 rounded-full hover:bg-light-01 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Dashboard
@@ -155,7 +155,7 @@ const Navbar = () => {
                 <div className="py-2">
                   <Logout />
                 </div>
-              </>
+              </div>
             ) : (
               <a
                 href="/login"
@@ -166,7 +166,7 @@ const Navbar = () => {
               </a>
             )}
 
-            <button className="button-01 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
+            <button className="button-01 bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
               Contactar
             </button>
           </div>

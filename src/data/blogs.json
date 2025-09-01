@@ -1,21 +1,21 @@
 {
   "blogs": [
     {
-      "title": "Introducción a React",
+      "title": "Introducción sss",
       "slug": "introduccion-react",
       "description": "Aprende los conceptos básicos de React y cómo comenzar a usarlo",
       "content": "React es una biblioteca de JavaScript para construir interfaces de usuario...",
       "imageUrl": "https://picsum.photos/seed/react/600/400",
-      "date": "2025-08-28T18:20:28.810Z",
+      "date": "2025-09-01T22:40:30.822Z",
       "id": 1
     },
     {
-      "title": "Introducción a Node.js",
+      "title": "Espiritualidad",
       "slug": "introduccion-nodejs",
       "description": "Construye aplicaciones del lado del servidor con JavaScript",
       "content": "Node.js es un entorno de ejecución de JavaScript del lado del servidor...",
       "imageUrl": "https://picsum.photos/seed/nodejs/600/400",
-      "date": "2025-09-01T16:20:18.640Z",
+      "date": "2025-09-01T22:06:02.226Z",
       "id": 5
     }
   ]

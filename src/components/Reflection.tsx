@@ -1,8 +1,15 @@
+"use client";
+
 import Button from "./Button";
+import { motion } from "motion/react";
 
 const Reflection = ({ children = "", textButton = "" }) => {
   return (
-    <div
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      viewport={{ once: false, amount: 0.1 }}
       className="my-20 md:my-40 lg:my-60 flex flex-col items-center justify-center 
                 py-10 md:py-16 lg:py-20 px-4 rounded-lg shadow-lg bg-reflection-01"
     >
@@ -21,7 +28,7 @@ const Reflection = ({ children = "", textButton = "" }) => {
 
       {/* Botón */}
       <Button className="button-01" children={textButton} />
-    </div>
+    </motion.section>
   );
 };
 

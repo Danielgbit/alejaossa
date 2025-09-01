@@ -56,12 +56,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-[500px] py-40 flex items-center justify-center bg-light-02">
+    <div className="min-h-[500px] py-20 md:py-40 flex items-center justify-center bg-light-02">
       <form
         onSubmit={handleSubmit}
-        className="bg-light-03 p-8 rounded-xl shadow-md w-80"
+        className="bg-light-03 p-6 md:p-8 rounded-xl shadow-md w-full max-w-sm sm:max-w-md"
       >
-        <h1 className="text-xl font-semibold mb-5 font-lexend tracking-title text-center text-dark-01">
+        <h1 className="text-xl md:text-2xl font-semibold mb-6 font-lexend tracking-title text-center text-dark-01">
           Iniciar Sesión
         </h1>
 
@@ -70,7 +70,8 @@ export default function LoginPage() {
           placeholder="Usuario"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full border border-black text-sm tracking-[-0.3] p-2 rounded"
+          className="w-full border border-dark-02 text-sm md:text-base tracking-[-0.3] p-2 rounded mt-5 
+             focus:outline-none focus:border-purple-500 focus:ring-2 placeholder:text-xs focus:ring-purple-300"
           required
           disabled={isLoading}
         />
@@ -80,13 +81,14 @@ export default function LoginPage() {
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border text-sm tracking-[-0.3] p-2 rounded mt-5"
+          className="w-full border border-dark-02 text-sm md:text-base tracking-[-0.3] p-2 rounded mt-5 
+             focus:outline-none focus:border-purple-500 placeholder:text-xs focus:ring-2 focus:ring-purple-300"
           required
           disabled={isLoading}
         />
 
         {error && (
-          <span className="text-red-800 font-lexend text-xs block mt-2">
+          <span className="text-red-800 font-lexend text-xs md:text-sm block mt-2">
             {error}
           </span>
         )}

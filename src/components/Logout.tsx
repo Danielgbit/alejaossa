@@ -22,12 +22,12 @@ const Logout = () => {
   return (
     <button
       onClick={handleSignOut}
-      className="flex items-center justify-center p-2 rounded-md hover:bg-purple-500 bg-purple-300 transition-colors duration-200 cursor-pointer" // Borde rojo para debug
+      className="flex items-center justify-center bg-dark-04 p-2 rounded-md hover:bg-purple-500 md:bg-purple-300 transition-colors duration-200 cursor-pointer" // Borde rojo para debug
       title="Cerrar sesión"
       aria-label="Cerrar sesión"
       style={{ zIndex: 1000 }} // Forzar visibilidad
     >
-      <LogOut className="w-4 h-4 text-purple-900 hover:text-purple-100" />
+      <LogOut className="w-4 h-4 text-purple-100 hover:text-purple-100" />
     </button>
   );
 };

@@ -1,8 +1,8 @@
-
 /* Swiper Styles */
 
-.swiper-button-next:after, .swiper-button-prev:after {
-    color: rgb(98, 38, 110);
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: rgb(98, 38, 110);
 }
 
 .swiper-button-next:after {
@@ -13,6 +13,16 @@
   padding-left: 50px;
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background-color: rgb(204, 121, 255) !important;
+}
+
+@media (max-width: 400px) {
+  .swiper-button-next:after {
+      display: none;
+    }
+
+  .swiper-button-prev:after {
+      display: none;
+    }
 }

@@ -15,10 +15,8 @@ export default function TestimonialCarousel({}) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
-    // Importa Swiper de manera dinámica solo en el cliente
     import("swiper").then(({ Swiper }) => {
       swiperRef.current = new Swiper(".swiper", {
-        // Configura tus opciones aquí
         modules: [Navigation, Pagination, Autoplay],
         direction: "horizontal",
         loop: true,
@@ -33,8 +31,20 @@ export default function TestimonialCarousel({}) {
         autoplay: {
           delay: 5000,
         },
-        slidesPerView: 1, // Perfecto para testimonios
         spaceBetween: 30,
+
+        // 👇 Aquí lo responsive
+        breakpoints: {
+          0: {
+            slidesPerView: 1, // móviles
+          },
+          768: {
+            slidesPerView: 2, // tablets
+          },
+          1024: {
+            slidesPerView: 3, // desktops
+          },
+        },
       });
     });
 
@@ -62,9 +72,10 @@ export default function TestimonialCarousel({}) {
       </div>
 
       {/* Controles */}
+      {/* Controles */}
       <div className="swiper-pagination"></div>
-      <div className="swiper-button-next"></div>
-      <div className="swiper-button-prev"></div>
+      <div className="hidden md:block swiper-button-next"></div>
+      <div className="hidden md:block swiper-button-prev"></div>
     </div>
   );
 }

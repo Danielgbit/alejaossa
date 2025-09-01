@@ -7,7 +7,7 @@ import Button from "./Button";
 
 export const ServiceCard = ({ service }: { service: Service }) => {
   return (
-    <div className="flex flex-col space-y-5 items-center shadow-lg justify-center bg-light-02 py-8 px-10 rounded-lg">
+    <div className="flex flex-col space-y-5 items-center shadow-lg justify-between bg-light-02 py-8 px-10 rounded-lg">
       <Image
         src={service.imageUrl}
         alt={service.title}
