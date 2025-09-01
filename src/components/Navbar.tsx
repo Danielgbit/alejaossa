@@ -45,7 +45,7 @@ const Navbar = () => {
       <nav
         className={`
         p-4 
-        bg-white 
+        bg-transparent 
         fixed 
         top-0 
         left-0 
@@ -53,9 +53,11 @@ const Navbar = () => {
         z-50 
         transition-transform 
         duration-300
+        flex
+        justify-evenly
         ease-in-out
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
-        ${isScrolled ? "shadow-md border-b border-gray-200" : ""}
+        ${isScrolled ? "shadow-md border-b border-gray-200 bg-light-02" : ""}
       `}
       >
         <div className="container flex justify-between w-full items-center text-dark-02">
@@ -124,7 +126,7 @@ const Navbar = () => {
 
       {/* Menú móvil */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed py-5 top-16 left-0 w-full h-full bg-white z-40 pt-4 px-4">
+        <div className={`${isVisible ? "translate-y-0" : "-translate-y-[-100%] ease-in-out duration-300 trasition-transform"} md:hidden fixed py-5 top-16 left-0 w-full h-full bg-light-01 z-40 pt-4 px-4`}>
           <div className="flex flex-col space-y-6">
             <a
               href="/"
