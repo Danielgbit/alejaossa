@@ -16,7 +16,7 @@ export default function Home() {
         children="En la quietud de tu ser encuentras la sabiduría que siempre ha habitado en
       ti. Tu sanación es un viaje de regreso a casa, a tu esencia verdadera."
       />
-{/*       <Empathy />
+      <Empathy />
       <Services/>
       <Reflection textButton="Consultar agenda" children="La reflexión es un proceso esencial en el camino hacia la sanación. Nos
         permite mirar hacia adentro."/>
@@ -24,7 +24,7 @@ export default function Home() {
       <FAQ/>
       <Testimonials/>
       <Reflection textButton="Contactame" children='La reflexión es un proceso esencial en el camino hacia la sanación. Nos
-        permite mirar hacia adentro.'/> */}
+        permite mirar hacia adentro.'/>
     </>
   )
 }

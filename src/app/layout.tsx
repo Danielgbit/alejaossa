@@ -47,7 +47,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             {children}
-           {/*  <Footer /> */}
+            <Footer />
           </Providers>
         </QueryProvider>
       </body>

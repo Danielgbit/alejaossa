@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center md:items-start my-20 md:my-20 gap-10">
+    <section className="flex flex-col-reverse md:flex-row items-center md:items-start my-20 md:my-35 gap-10">
       {/* Texto */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start p-6">
         <span className="font-semibold text-dark-01 tracking-sub mb-4 uppercase font-lexend text-sm md:text-base">
