@@ -2,13 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
 import { Blog } from "@/types/blog";
 
+type Params = {
+  params: { slug: string };
+};
+
 // GET handler
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function GET(request: NextRequest, context: Params) {
   try {
-    const { slug } = params;
+    const { slug } = context.params;
     const data = await readBlogsData();
     const blog = data.blogs.find((b: { slug: string }) => b.slug === slug);
 
@@ -23,12 +24,9 @@ export async function GET(
 }
 
 // DELETE handler
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function DELETE(request: NextRequest, context: Params) {
   try {
-    const { slug } = params;
+    const { slug } = context.params;
     const data = await readBlogsData();
 
     const blogIndex = data.blogs.findIndex(
@@ -57,12 +55,9 @@ export async function DELETE(
 }
 
 // PUT handler
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function PUT(request: NextRequest, context: Params) {
   try {
-    const { slug } = params;
+    const { slug } = context.params;
     const updates = await request.json();
 
     const data = await readBlogsData();
