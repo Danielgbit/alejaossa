@@ -5,10 +5,10 @@ import { Blog } from "@/types/blog";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = context.params;
     const data = await readBlogsData();
     const blog = data.blogs.find((b: { slug: string }) => b.slug === slug);
 
@@ -24,15 +24,17 @@ export async function GET(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = context.params;
 
     const data = await readBlogsData();
 
     // Buscar el índice del blog por slug
-    const blogIndex = data.blogs.findIndex((b: { slug: string }) => b.slug === slug);
+    const blogIndex = data.blogs.findIndex(
+      (b: { slug: string }) => b.slug === slug
+    );
 
     if (blogIndex === -1) {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });
@@ -60,13 +62,13 @@ export async function DELETE(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
   try {
-    const { slug } = params;
-    
+    const { slug } = context.params;
+
     const updates = await request.json();
-    
+
     // Leer datos existentes
     const data = await readBlogsData();
 
