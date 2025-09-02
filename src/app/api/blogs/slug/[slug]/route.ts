@@ -1,14 +1,14 @@
-// src/app/api/blogs/slug/[slug]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
 import { Blog } from "@/types/blog";
 
+// GET handler
 export async function GET(
   request: NextRequest,
-  context: { params: { slug: string } }
+  { params }: { params: { slug: string } }
 ) {
   try {
-    const { slug } = context.params;
+    const { slug } = params;
     const data = await readBlogsData();
     const blog = data.blogs.find((b: { slug: string }) => b.slug === slug);
 
@@ -22,16 +22,15 @@ export async function GET(
   }
 }
 
+// DELETE handler
 export async function DELETE(
-  request: Request,
-  context: { params: { slug: string } }
+  request: NextRequest,
+  { params }: { params: { slug: string } }
 ) {
   try {
-    const { slug } = context.params;
-
+    const { slug } = params;
     const data = await readBlogsData();
 
-    // Buscar el índice del blog por slug
     const blogIndex = data.blogs.findIndex(
       (b: { slug: string }) => b.slug === slug
     );
@@ -40,10 +39,7 @@ export async function DELETE(
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });
     }
 
-    // Eliminar el blog del array
     data.blogs.splice(blogIndex, 1);
-
-    // Guardar los datos actualizados
     const success = await writeBlogsData(data);
 
     if (!success) {
@@ -60,26 +56,22 @@ export async function DELETE(
   }
 }
 
+// PUT handler
 export async function PUT(
-  request: Request,
-  context: { params: { slug: string } }
+  request: NextRequest,
+  { params }: { params: { slug: string } }
 ) {
   try {
-    const { slug } = context.params;
-
+    const { slug } = params;
     const updates = await request.json();
 
-    // Leer datos existentes
     const data = await readBlogsData();
-
-    // Encontrar el índice del blog
     const blogIndex = data.blogs.findIndex((b: Blog) => b.slug === slug);
 
     if (blogIndex === -1) {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });
     }
 
-    // Si se intenta cambiar el slug, verificar que no exista
     if (updates.slug && updates.slug !== slug) {
       const slugExists = data.blogs.some(
         (b: Blog) => b.slug === updates.slug && b.slug !== slug
@@ -92,17 +84,13 @@ export async function PUT(
       }
     }
 
-    // Actualizar el blog
     const updatedBlog = {
       ...data.blogs[blogIndex],
       ...updates,
-      // Mantener el ID original y actualizar la fecha de modificación
       date: new Date().toISOString(),
     };
 
     data.blogs[blogIndex] = updatedBlog;
-
-    // Guardar los datos actualizados
     const success = await writeBlogsData(data);
 
     if (!success) {
