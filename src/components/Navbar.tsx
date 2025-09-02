@@ -121,7 +121,7 @@ const Navbar = () => {
             className="w-[20%] justify-end md:flex hidden"
           >
             <Button className="button-01 hover:scale-105 transition-transform">
-              Contactar
+              Hablemos
             </Button>
           </a>
 
@@ -160,6 +160,12 @@ const Navbar = () => {
             >
               Blogs
             </a>
+            <a
+              href="/services"
+              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+            >
+              Servicios
+            </a>
 
             {session?.user ? (
               <div className="flex flex-col justify-center items-center gap-3">
@@ -185,7 +191,7 @@ const Navbar = () => {
             )}
 
             <button className="button-01 bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
-              Contactar
+              Hablemos
             </button>
           </div>
         </div>

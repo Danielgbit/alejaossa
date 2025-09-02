@@ -44,7 +44,7 @@ const FAQ = () => {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="mt-4 text-sm md:text-base text-dark-02 font-light leading-relaxed overflow-hidden"
+                    className="mt-4 text-sm md:text-base text-dark-02 tracking-paragraph font-light leading-relaxed overflow-hidden"
                   >
                     {faq.answer}
                   </motion.p>

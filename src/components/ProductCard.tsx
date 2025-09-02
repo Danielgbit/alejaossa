@@ -13,6 +13,7 @@ const ProductCard = ({ item }: { item: ProductProps }) => {
           src={item.imageUrl}
           alt={item.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-purple-500/30 mix-blend-multiply"></div>
@@ -22,7 +23,7 @@ const ProductCard = ({ item }: { item: ProductProps }) => {
         {item.title}
       </span>
 
-      <p className="text-[12px] text-center font-normal font-lexend text-dark-01 tracking-sub">
+      <p className="text-[12px] text-center font-light font-lexend text-dark-01 tracking-paragraph">
         {item.description}
       </p>
 
