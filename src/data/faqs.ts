@@ -1,18 +1,33 @@
 const faqs = [
   {
-    question: "¿Qué es la terapia energética?",
+    question: "¿En qué consisten tus terapias?",
     answer:
-      "La terapia energética es un enfoque holístico que busca equilibrar la energía vital del cuerpo, liberando bloqueos emocionales y promoviendo el bienestar físico, mental y espiritual.",
+      "Mis terapias integran cuerpo, mente, alma y espíritu. A través de herramientas como constelaciones familiares, biodescodificación, coaching, programación neurolingüística y terapias espirituales, acompaño procesos de sanación y expansión personal.",
   },
   {
-    question: "¿Cuántas sesiones necesito?",
+    question: "¿Necesito experiencia previa para asistir a un círculo o retiro?",
     answer:
-      "Depende de cada persona. Algunas personas sienten cambios desde la primera sesión, mientras que otras prefieren un proceso más continuo para trabajar en profundidad.",
+      "No, no necesitas experiencia previa. Los espacios están diseñados para cualquier persona que desee reconectar consigo misma, sanar memorias y abrirse a la transformación personal.",
   },
   {
-    question: "¿Las terapias son presenciales o en línea?",
+    question: "¿Cómo saber si este acompañamiento es para mí?",
     answer:
-      "Ofrezco ambas modalidades. Puedes asistir a mi consulta presencial o recibir la sesión en línea desde la comodidad de tu hogar.",
+      "Si sientes que cargas con bloqueos emocionales, patrones repetitivos o buscas un espacio seguro para explorar tu interior y crecer, este acompañamiento puede resonar contigo.",
+  },
+  {
+    question: "¿Ofreces sesiones presenciales o en línea?",
+    answer:
+      "Ambas. Puedes asistir de manera presencial a los espacios en Medellín o recibir la sesión en línea desde cualquier lugar del mundo.",
+  },
+  {
+    question: "¿Cuántas sesiones necesito para ver cambios?",
+    answer:
+      "Cada proceso es único. Algunas personas sienten alivio desde la primera sesión, mientras que otras eligen un acompañamiento más profundo y continuo según sus necesidades.",
+  },
+  {
+    question: "¿También acompañas a grupos además de sesiones individuales?",
+    answer:
+      "Sí. Facilito círculos de mujeres, círculos mixtos y retiros, además de ofrecer sesiones individuales personalizadas.",
   },
 ];
 

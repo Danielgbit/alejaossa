@@ -1,9 +1,10 @@
 interface Service {
-  id: number
+  id: number;
   title: string;
   description: string;
   imageUrl: string;
   buttonText: string;
+  category:string;
 }
 
 export type { Service };

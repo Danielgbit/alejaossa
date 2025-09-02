@@ -1,22 +1,15 @@
 import { Testimonial } from "@/types/testimonial";
+import { User } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 const TestimonalCard = ({ item }: { item: Testimonial }) => {
   return (
-    <div className="flex flex-col justify-center items-center text-center px-4">
-      {/* Imagen redonda */}
-      <Image
-        className="rounded-full object-cover mb-5"
-        src={item.imageUrl}
-        alt={item.name}
-        width={200}
-        height={200}
-        priority
-      />
+    <div className="flex flex-col justify-between h-[250px] items-center text-center px-4">
+      <User size={50} className="mb-4 text-dark-03" />
 
       {/* Texto del testimonio */}
-      <blockquote className="font-cormorant text-dark-01 text-lg md:text-xl leading-relaxed">
+      <blockquote className="font-cormorant tracking-paragraph text-dark-01 text-lg md:text-xl leading-relaxed">
         “{item.text}”
       </blockquote>
 

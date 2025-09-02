@@ -1,21 +1,18 @@
 const testimonials = [
   {
     id: 1,
-    name: "María González",
-    text: "La terapia energética transformó mi vida. Me siento más ligera, en paz y con mayor claridad emocional.",
-    imageUrl: "/images/testimonial-01.jpg",
+    name: "María Isabel Gómez",
+    text: "Alejita, gracias por abrazar tan fuerte a mi niña interior, hasta el punto de sanar mis miedos más profundos.",
   },
   {
     id: 2,
-    name: "Carlos Ramírez",
-    text: "Nunca pensé que una sesión en línea pudiera tener tanto impacto. Siento un cambio real en mi energía.",
-    imageUrl: "/images/testimonial-01.jpg",
+    name: "Ana María Herrera",
+    text: "Fue la experiencia más bonita de mi vida: aprender a reconocerme, a entender y tramitar mis miedos y fortalezas.",
   },
   {
     id: 3,
-    name: "Ana López",
-    text: "Gracias a las sesiones de meditación guiada encontré calma en medio del estrés de la ciudad.",
-    imageUrl: "/images/testimonial-01.jpg",
+    name: "Daniela Moncada",
+    text: "Fue uno de los mejores regalos que me pude entregar este año. Logré sanar muchas cosas que no sabía que aún me dolían tanto.",
   },
 ];
 

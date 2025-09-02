@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import avatar from "@/../public/images/hero/hero-main.png";
+import avatar from "@/../public/images/aleja-03.jpg";
 import Motivational from "@/components/Motivational";
 
 const AboutMe = () => {
@@ -19,7 +19,7 @@ const AboutMe = () => {
 
       {/* Texto */}
       <div className="w-full md:w-1/2 max-w-3xl mx-auto px-6 text-center md:text-left">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-light-02 font-cormorant font-light mb-6">
+        <h2 className="text-2xl md:text-3xl lg:text-6xl tracking-title text-light-02 font-cormorant font-light mb-6">
           Sobre mí
         </h2>
 
@@ -28,15 +28,17 @@ const AboutMe = () => {
           className="text-base md:text-lg lg:text-xl rounded-xl mt-5 mb-10"
         />
 
-        <p className="text-base md:text-lg italic leading-relaxed text-light-02 font-semilight">
+        <p className="text-base tracking-paragraph md:text-lg italic leading-relaxed text-light-02 font-semilight">
           ¡Hola! Soy{" "}
           <span className="font-semibold font-lexend tracking-paragraph">
-            Alejandra Ossa
+            Alejandra Ossa Restrepo{" "}
           </span>
-          , un apasionado por la tecnología, el diseño web y la creación de
-          experiencias digitales que conectan con las personas. Me gusta
-          transformar ideas en proyectos funcionales y atractivos, siempre
-          cuidando los detalles y la calidad.
+          terapeuta holística que eligió caminar
+          con un propósito: recordar quién soy para acompañar a otros en su
+          proceso de sanación y expansión. Mi experiencia no solo proviene de
+          formaciones en coaching, PNL, constelaciones familiares,
+          biodescodificación y otras terapias, sino también de mi propio
+          recorrido vital, mis heridas y transformaciones.
         </p>
       </div>
     </section>

@@ -6,6 +6,7 @@ import AboutMe from "@/sections/AboutMe";
 import FAQ from "@/sections/FAQ";
 import Testimonials from "@/sections/Testimonials";
 import Reflection from "@/components/Reflection";
+import Products from "@/sections/Products";
 
 export default function Home() {
   return (
@@ -17,14 +18,19 @@ export default function Home() {
       ti. Tu sanación es un viaje de regreso a casa, a tu esencia verdadera."
       />
       <Empathy />
-      <Services/>
-      <Reflection textButton="Consultar agenda" children="La reflexión es un proceso esencial en el camino hacia la sanación. Nos
-        permite mirar hacia adentro."/>
-      <AboutMe/>
-      <FAQ/>
-      <Testimonials/>
-      <Reflection textButton="Contactame" children='La reflexión es un proceso esencial en el camino hacia la sanación. Nos
-        permite mirar hacia adentro.'/>
+      <Services />
+      <Reflection
+        textButton="Consultar agenda"
+        children="A veces el mayor acto de valentía es detenernos y escucharnos a nosotros mismos."
+      />
+      <AboutMe />
+      <FAQ />
+      <Products/>
+      <Testimonials />
+      <Reflection
+        textButton="Contactame"
+        children="Cada paso hacia adentro es un paso hacia tu libertad."
+      />
     </>
-  )
+  );
 }

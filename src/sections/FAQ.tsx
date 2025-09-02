@@ -12,7 +12,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-10 md:py-14">
+    <section className="mb-30 md:pb-20">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
         <div className="space-y-6 relative bg-light-02 p-6 md:p-10 rounded-lg shadow-lg">
           {/* Título FAQ */}

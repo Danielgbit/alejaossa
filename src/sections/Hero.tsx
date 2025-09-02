@@ -13,7 +13,7 @@ const Hero = () => {
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        viewport={{ once: false, amount: 0.3 }} 
+        viewport={{ once: false, amount: 0.3 }}
         className="flex flex-col-reverse md:flex-row items-center md:items-start gap-10 px-6 md:px-12"
       >
         {/* Texto */}
@@ -22,16 +22,20 @@ const Hero = () => {
             Terapeuta Holística
           </span>
           <h1 className="tracking-paragraph text-dark-03 font-cormorant font-normal text-lg md:text-2xl leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-            harum, tenetur dignissimos sunt hic optio, itaque alias rerum sapiente
-            sequi.
+            Trabajo desde una visión integral que une cuerpo, mente, alma y
+            espíritu, creando espacios seguros donde cada persona puede liberar
+            lo que no le sirve, reconectar con su esencia y abrirse a su
+            evolución y bienestar.
           </h1>
           <span className="font-normal text-xs md:text-sm tracking-[1px] mb-6 font-cormorant mt-6">
-            Volviendo al origen
+            El corazón siempre sabe el camino
           </span>
-          <div className="mt-6 md:mt-10">
+          <a
+            href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw"
+            className="mt-6 md:mt-10"
+          >
             <Button className="button-02" children="Agendar cita" />
-          </div>
+          </a>
         </div>
 
         {/* Imagen */}

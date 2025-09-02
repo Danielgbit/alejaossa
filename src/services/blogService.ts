@@ -6,16 +6,15 @@ const API_BASE_URL = "/api/blogs";
 export const blogService = {
   // GET all blogs
   async getAll(): Promise<Blog[]> {
-    const response = await fetch("/api/blogs");
+    const response = await fetch(API_BASE_URL);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
     return response.json();
   },
 
-  // GET blog by slug (¡IMPORTANTE! usa la nueva ruta)
+  // GET blog by slug
   async getBySlug(slug: string): Promise<Blog> {
     const response = await fetch(`${API_BASE_URL}/slug/${slug}`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -24,7 +23,7 @@ export const blogService = {
 
   //CREATE BLOG
   async create(blogData: Omit<Blog, "id">): Promise<Blog> {
-    const response = await fetch("/api/blogs", {
+    const response = await fetch(API_BASE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

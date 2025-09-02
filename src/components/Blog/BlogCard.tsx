@@ -110,7 +110,7 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           {blog.title}
         </h2>
 
-        <p className="text-xs text-dark-01 tracking-sub font-lexend mb-4 line-clamp-2">
+        <p className="text-xs h-8 text-dark-01 tracking-sub font-lexend mb-4 line-clamp-2">
           {blog.description}
         </p>
         <div className="flex items-center text-[10px] text-dark-02 font-lexend mb-2">

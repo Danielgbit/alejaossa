@@ -35,7 +35,7 @@ const Navbar = () => {
         ${isScrolled ? "shadow-md border-b border-gray-200" : ""}
       `}
       >
-        <LoadingNavBar/>
+        <LoadingNavBar />
       </nav>
     );
   }
@@ -61,9 +61,12 @@ const Navbar = () => {
       `}
       >
         <div className="container flex justify-between w-full items-center text-dark-02">
-          <div className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light">
+          <a
+            href="/"
+            className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light"
+          >
             Aleja Ossa
-          </div>
+          </a>
 
           {/* Menu para desktop */}
           <ul
@@ -83,6 +86,12 @@ const Navbar = () => {
               >
                 Blogs
               </a>
+              <a
+                href="/services"
+                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+              >
+                Servicios
+              </a>
 
               {session?.user ? (
                 <>
@@ -99,7 +108,7 @@ const Navbar = () => {
               ) : (
                 <a
                   href="/login"
-                  className="text-hover-light-01 flex gap-2 bg-light-02 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
+                  className="text-purple-800 hover:text-purple-800 text-sm flex gap-2 bg-purple-200 hover:bg-purple-300 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
                 >
                   Ingresar
                 </a>
@@ -107,11 +116,14 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="w-[20%] justify-end md:flex hidden">
+          <a
+            href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw"
+            className="w-[20%] justify-end md:flex hidden"
+          >
             <Button className="button-01 hover:scale-105 transition-transform">
               Contactar
             </Button>
-          </div>
+          </a>
 
           {/* Botón de menú móvil */}
           <button
@@ -126,7 +138,13 @@ const Navbar = () => {
 
       {/* Menú móvil */}
       {isMobileMenuOpen && (
-        <div className={`${isVisible ? "translate-y-0" : "-translate-y-[-100%] ease-in-out duration-300 trasition-transform"} md:hidden fixed py-5 top-16 left-0 w-full h-full bg-light-01 z-40 pt-4 px-4`}>
+        <div
+          className={`${
+            isVisible
+              ? "translate-y-0"
+              : "-translate-y-[-100%] ease-in-out duration-300 trasition-transform"
+          } md:hidden fixed py-5 top-16 left-0 w-full h-full bg-light-01 z-40 pt-4 px-4`}
+        >
           <div className="flex flex-col space-y-6">
             <a
               href="/"
