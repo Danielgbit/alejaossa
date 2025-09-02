@@ -15,7 +15,6 @@ export default function LoginPage() {
 
   const { data: session, status } = useSession();
 
-  // ✅ Redirección correcta con useEffect
   useEffect(() => {
     if (session?.user) {
       router.push("/dashboard");
@@ -46,9 +45,9 @@ export default function LoginPage() {
         setError("Usuario o contraseña incorrectos ❌");
       } else if (result?.ok) {
         router.push("/dashboard");
-        router.refresh(); // Forzar actualización del layout
+        router.refresh();
       }
-    } catch (err) {
+    } catch (err: unknown) {
       setError("Error al iniciar sesión");
     } finally {
       setIsLoading(false);

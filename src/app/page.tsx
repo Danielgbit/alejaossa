@@ -12,25 +12,24 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Motivational
-        className="text-xl wave"
-        children="En la quietud de tu ser encuentras la sabiduría que siempre ha habitado en
-      ti. Tu sanación es un viaje de regreso a casa, a tu esencia verdadera."
-      />
+      <Motivational className="text-xl wave">
+        En la quietud de tu ser encuentras la sabiduría que siempre ha habitado
+        en ti. Tu sanación es un viaje de regreso a casa, a tu esencia
+        verdadera.
+      </Motivational>
       <Empathy />
       <Services />
-      <Reflection
-        textButton="Consultar agenda"
-        children="A veces el mayor acto de valentía es detenernos y escucharnos a nosotros mismos."
-      />
+      <Reflection textButton="Consultar agenda">
+        A veces el mayor acto de valentía es detenernos y escucharnos a nosotros
+        mismos.
+      </Reflection>
       <AboutMe />
       <FAQ />
-      <Products/>
+      <Products />
       <Testimonials />
-      <Reflection
-        textButton="Contactame"
-        children="Cada paso hacia adentro es un paso hacia tu libertad."
-      />
+      <Reflection textButton="Contactame">
+        Cada paso hacia adentro es un paso hacia tu libertad.
+      </Reflection>
     </>
   );
 }

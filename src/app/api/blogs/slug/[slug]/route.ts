@@ -2,7 +2,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readBlogsData, writeBlogsData } from "@/lib/json-utils";
 import { Blog } from "@/types/blog";
-import { log } from "node:console";
 
 export async function GET(
   request: NextRequest,

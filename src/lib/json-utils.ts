@@ -1,3 +1,4 @@
+import { Blog } from "@/types/blog";
 import fs from "fs";
 import path from "path";
 
@@ -19,13 +20,13 @@ async function readBlogsData() {
   }
 }
 
-async function writeBlogsData(data: any) {
+async function writeBlogsData(data: Blog) {
   try {
     const jsonData = JSON.stringify(data, null, 2);
-    fs.writeFileSync(filepath, jsonData, 'utf8');
+    fs.writeFileSync(filepath, jsonData, "utf8");
     return true;
   } catch (error) {
-    console.error('Error writing blogs data:', error);
+    console.error("Error writing blogs data:", error);
     return false;
   }
 }
