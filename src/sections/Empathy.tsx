@@ -28,8 +28,8 @@ const Empathy = () => {
           <div className="absolute inset-0 bg-purple-500/30 mix-blend-multiply"></div>
         </div>
         <Motivational className="absolute bottom-[-15%] left-1/2 transform -translate-x-1/2 md:bottom-[-20%] md:left-1/2 md:-translate-x-1/2 text-sm md:text-xl font-normal">
-          "La sanación y la expansión ocurren cuando recordamos quiénes somos en
-          esencia."
+          La sanación y la expansión ocurren cuando recordamos quiénes somos en
+          esencia.
         </Motivational>
       </div>
 

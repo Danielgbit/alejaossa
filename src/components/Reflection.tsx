@@ -28,7 +28,7 @@ const Reflection = ({ children = "", textButton = "" }) => {
 
       {/* Botón */}
       <a href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw">
-        <Button className="button-01" children={textButton} />
+        <Button className="button-01">{textButton}</Button>
       </a>
     </motion.section>
   );

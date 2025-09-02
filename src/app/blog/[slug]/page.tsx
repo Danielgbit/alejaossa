@@ -39,7 +39,7 @@ export default function BlogDetailPage({
             className="w-full sm:w-auto"
           />
           <div onClick={redirectEdit}>
-            <Button children="Editar" className="button-01 w-full sm:w-auto" />
+            <Button className="button-01 w-full sm:w-auto">Editar</Button>
           </div>
         </div>
       )}

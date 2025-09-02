@@ -7,6 +7,7 @@ import Logout from "./Logout";
 import useScroll from "@/hooks/useScroll";
 import { Menu, X } from "lucide-react";
 import LoadingNavBar from "./LoadingNavBar";
+import Link from "next/link";
 
 const Navbar = () => {
   const { data: session, status } = useSession();
@@ -61,12 +62,12 @@ const Navbar = () => {
       `}
       >
         <div className="container flex justify-between w-full items-center text-dark-02">
-          <a
+          <Link
             href="/"
             className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light"
           >
             Aleja Ossa
-          </a>
+          </Link>
 
           {/* Menu para desktop */}
           <ul
@@ -74,44 +75,44 @@ const Navbar = () => {
             }`}
           >
             <li className="flex justify-between w-full items-center">
-              <a
+              <Link
                 href="/"
                 className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
               >
                 Inicio
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/blog"
                 className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
               >
                 Blogs
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
               >
                 Servicios
-              </a>
+              </Link>
 
               {session?.user ? (
                 <>
-                  <a
+                  <Link
                     href="dashboard"
                     className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
                   >
                     Dashboard
-                  </a>
+                  </Link>
                   <li className="list-none">
                     <Logout />
                   </li>
                 </>
               ) : (
-                <a
+                <Link
                   href="/login"
                   className="text-purple-800 hover:text-purple-800 text-sm flex gap-2 bg-purple-200 hover:bg-purple-300 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
                 >
                   Ingresar
-                </a>
+                </Link>
               )}
             </li>
           </ul>
@@ -146,53 +147,54 @@ const Navbar = () => {
           } md:hidden fixed py-5 top-16 left-0 w-full h-full bg-light-01 z-40 pt-4 px-4`}
         >
           <div className="flex flex-col space-y-6">
-            <a
+            <Link
               href="/"
               className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inicio
-            </a>
-            <a
+            </Link>
+            <Link
               href="/blog"
               className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blogs
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
             >
               Servicios
-            </a>
+            </Link>
 
             {session?.user ? (
               <div className="flex flex-col justify-center items-center gap-3">
-                <a
+                <Link
                   href="dashboard"
                   className="text-hover-light-01 font-lexend text-dark-03 tracking-brand text-sm text-center w-[50%] mx-auto bg-light-02 py-1 rounded-full hover:bg-light-01 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Dashboard
-                </a>
+                </Link>
                 <div className="py-2">
                   <Logout />
                 </div>
               </div>
             ) : (
-              <a
+              <Link
                 href="/login"
                 className="text-hover-light-01 w-[50%] flex gap-2 font-lexend bg-light-02 px-3 py-2 text-xs rounded-full hover:bg-light-01 transition-colors mx-auto justify-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Ingresar
-              </a>
+              </Link>
             )}
-
-            <button className="button-01 bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
-              Hablemos
-            </button>
+            <a href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw">
+              <button className="button-01 bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
+                Hablemos
+              </button>
+            </a>
           </div>
         </div>
       )}

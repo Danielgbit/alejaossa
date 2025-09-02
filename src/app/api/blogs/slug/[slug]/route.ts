@@ -11,7 +11,7 @@ export async function GET(
   try {
     const { slug } = params;
     const data = await readBlogsData();
-    const blog = data.blogs.find((b: any) => b.slug === slug);
+    const blog = data.blogs.find((b: { slug: string }) => b.slug === slug);
 
     if (!blog) {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });
@@ -33,7 +33,7 @@ export async function DELETE(
     const data = await readBlogsData();
 
     // Buscar el índice del blog por slug
-    const blogIndex = data.blogs.findIndex((b: any) => b.slug === slug);
+    const blogIndex = data.blogs.findIndex((b: { slug: string }) => b.slug === slug);
 
     if (blogIndex === -1) {
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });

@@ -27,11 +27,11 @@ const Services = () => {
             <ServiceCard key={item.id} service={item} />
           ))}
         </motion.div>
-        <a href="/services" className="w-full flex justify-center mt-10 md:mt-20">
-          <Button
-            children="Ver más servicios"
-            className="button-01"
-          />
+        <a
+          href="/services"
+          className="w-full flex justify-center mt-10 md:mt-20"
+        >
+          <Button className="button-01">Ver más servicios</Button>
         </a>
       </div>
     </section>

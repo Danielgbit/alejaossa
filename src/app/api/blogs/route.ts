@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     const data = await readBlogsData();
 
     // Verificar si el slug ya existe
-    if (data.blogs.some((blog: any) => blog.slug === newBlog.slug)) {
+    if (data.blogs.some((blog: { slug: string }) => blog.slug === newBlog.slug)) {
       return NextResponse.json(
         { error: "Ya existe un blog con este slug" },
         { status: 400 }
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     }
 
     // Generar ID único
-    const newId = Math.max(...data.blogs.map((blog: any) => blog.id), 0) + 1;
+    const newId = Math.max(...data.blogs.map((blog: { id: number }) => blog.id), 0) + 1;
 
     // Crear el objeto blog completo
     const blogToAdd = {
