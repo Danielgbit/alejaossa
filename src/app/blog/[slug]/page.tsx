@@ -9,11 +9,8 @@ import { useBlogBySlug } from "@/hooks/useBlogs";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-export default function BlogDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function BlogDetailPage(props: { params: { slug: string } }) {
+  const { params } = props;
   const { data: blog, error, isLoading } = useBlogBySlug(params.slug);
   const { data: session } = useSession();
   const router = useRouter();
