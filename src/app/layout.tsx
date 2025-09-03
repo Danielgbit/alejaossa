@@ -1,4 +1,5 @@
 import { Ballet, Cormorant_Garamond, Lexend_Deca } from "next/font/google";
+import { defaultMetadata } from './metadata/defaultMetadata';
 
 /* Styles import */
 import "./globals.css";
@@ -32,6 +33,8 @@ const ballet = Ballet({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
