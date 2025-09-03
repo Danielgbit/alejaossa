@@ -3,7 +3,7 @@ import { DefaultMetadataConfig } from "@/types/metadata";
 
 export const defaultConfig: DefaultMetadataConfig = {
   title: "Aleja Ossa",
-  description: "Descubre tu esencia",
+  description: "ALEJA OSSA - Descubre tu Propósito",
   siteName: "Aleja ossa",
   baseUrl: "https://alejaossa.vercel.app",
   defaultImage: "https://alejaossa.vercel.app/images/og/default-og.jpg", // ← Ruta corregida
