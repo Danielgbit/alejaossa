@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { DefaultMetadataConfig } from "./types";
 
 export const defaultConfig: DefaultMetadataConfig = {
-  title: "Blog - Aleja Ossa",
+  title: "Aleja Ossa",
   description: "Descubre tu esencia",
   siteName: "Aleja ossa",
   baseUrl: "https://alejaossa.vercel.app",
