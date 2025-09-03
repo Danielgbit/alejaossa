@@ -2,22 +2,22 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: rgb(98, 38, 110);
+  color: rgba(98, 38, 110, 0.148);
 }
 
 .swiper-button-next:after {
-  padding-right: 50px;
+  padding-right: 20px;
 }
 
 .swiper-button-prev:after {
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: rgb(204, 121, 255) !important;
+  background-color: rgb(229, 186, 255) !important;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .swiper-button-next:after {
       display: none;
     }
