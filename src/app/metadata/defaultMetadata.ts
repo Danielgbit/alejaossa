@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { DefaultMetadataConfig } from "./types";
+import { DefaultMetadataConfig } from "@/types/metadata";
 
 export const defaultConfig: DefaultMetadataConfig = {
   title: "Aleja Ossa",

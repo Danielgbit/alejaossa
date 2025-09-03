@@ -34,7 +34,7 @@ const Empathy = () => {
       </div>
 
       <div className="w-full md:w-[50%] max-w-4xl mx-auto text-center md:text-left px-4">
-        <h2 className="font-cormorant text-dark-01 text-3xl md:text-4xl font-semibold text-primary mb-6">
+        <h2 className="font-cormorant text-dark-01 text-3xl mt-1 md:mt-30 md:text-4xl font-semibold text-primary mb-6">
           Acompañandote
         </h2>
 

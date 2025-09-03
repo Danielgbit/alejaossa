@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
-import { Blog } from '@/types/blog';
-import { defaultConfig } from './defaultMetadata';
+import { Metadata } from "next";
+import { Blog } from "@/types/blog";
+import { defaultConfig } from "./defaultMetadata";
 
 export function generateBlogMetadata(blog: Blog): Metadata {
-  const fullImageUrl = blog.imageUrl.startsWith('http') 
-    ? blog.imageUrl 
+  const fullImageUrl = blog.imageUrl.startsWith("http")
+    ? blog.imageUrl
     : `${defaultConfig.baseUrl}${blog.imageUrl}`;
 
   const blogUrl = `${defaultConfig.baseUrl}/blog/${blog.slug}`;
