@@ -1,71 +1,39 @@
 // src/services/blogService.ts
 import { Blog } from "@/types/blog";
-
-const API_BASE_URL = "/api/blogs";
+import { supabase } from "@/supabase/client";
 
 export const blogService = {
-  // GET all blogs
-  async getAll(): Promise<Blog[]> {
-    const response = await fetch(API_BASE_URL);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
+  async getAll() {
+    const { data, error } = await supabase.from("blogs").select("*");
+    if (error) throw error;
+    return data;
   },
 
   // GET blog by slug
   async getBySlug(slug: string): Promise<Blog> {
-    const response = await fetch(`${API_BASE_URL}/slug/${slug}`);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    return response.json();
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .eq("slug", slug);
+    if (error) throw error;
+    return data[0];
   },
 
-  //CREATE BLOG
-  async create(blogData: Omit<Blog, "id">): Promise<Blog> {
-    const response = await fetch(API_BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(blogData),
-    });
+  async update(slug: string, blogData: Partial<Blog>) {
+    const { data, error } = await supabase
+      .from("blogs")
+      .update(blogData)
+      .eq("slug", slug)
+      .select()
+      .single(); // 👈 garantiza un solo objeto
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return response.json();
-  },
-
-  // UPDATE blog by slug
-  async update(slug: string, blogData: Partial<Blog>): Promise<Blog> {
-    const response = await fetch(`${API_BASE_URL}/slug/${slug}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(blogData),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(
-        errorData.error || `HTTP error! status: ${response.status}`
-      );
-    }
-
-    return response.json();
+    if (error) throw error;
+    return data;
   },
 
   // DELETE blog by slug
-  async deleteBySlug(slug: string): Promise<void> {
-    const response = await fetch(`${API_BASE_URL}/slug/${slug}`, {
-      method: "DELETE",
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+  async deleteBySlug(slug: string) {
+    const { error } = await supabase.from("blogs").delete().eq("slug", slug);
+    if (error) throw error;
   },
 };

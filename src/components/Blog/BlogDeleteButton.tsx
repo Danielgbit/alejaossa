@@ -13,6 +13,7 @@ export default function BlogDeleteButton({
   className = "",
 }: BlogDeleteButtonProps) {
   const [isConfirming, setIsConfirming] = useState(false);
+
   const { mutate: deleteBlog, isPending, error } = useDeleteBlog();
 
   const handleDelete = () => {
@@ -45,7 +46,8 @@ export default function BlogDeleteButton({
   };
 
   const getButtonClass = () => {
-    const baseClass = "transition-all rounded-full font-lexend uppercase tracking-title duration-200 rounded";
+    const baseClass =
+      "transition-all rounded-full font-lexend uppercase tracking-title duration-200 rounded";
 
     if (isPending) {
       return `${baseClass} bg-gray-400 text-white px-5 py-2 opacity-50 ${className}`;

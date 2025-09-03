@@ -17,23 +17,6 @@ export const useBlogBySlug = (slug: string) => {
   });
 };
 
-export const useCreateBlog = () => {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: blogService.create,
-    onSuccess: (newBlog) => {
-      // Invalidar y refetch la query de blogs
-      queryClient.invalidateQueries({ queryKey: ["blogs"] });
-
-      // Opcional: Actualizar el cache directamente
-      queryClient.setQueryData(["blogs"], (oldBlogs: Blog[] | undefined) => {
-        return oldBlogs ? [...oldBlogs, newBlog] : [newBlog];
-      });
-    },
-  });
-};
-
 export const useDeleteBlog = () => {
   const queryClient = useQueryClient();
 
@@ -52,20 +35,25 @@ export const useUpdateBlog = () => {
   return useMutation({
     mutationFn: ({ slug, data }: { slug: string; data: Partial<Blog> }) =>
       blogService.update(slug, data),
+
     onSuccess: (updatedBlog, variables) => {
-      // Invalidar y refetch las queries
+      // Invalidar la lista completa de blogs
       queryClient.invalidateQueries({ queryKey: ["blogs"] });
 
-      // Si el slug cambió, invalidar ambas queries (vieja y nueva)
-      if (variables.slug !== updatedBlog.slug) {
+      // Si el slug cambió, invalidar ambas queries
+      if (variables.slug !== updatedBlog?.slug) {
         queryClient.invalidateQueries({ queryKey: ["blog", variables.slug] });
-        queryClient.invalidateQueries({ queryKey: ["blog", updatedBlog.slug] });
+        queryClient.invalidateQueries({
+          queryKey: ["blog", updatedBlog?.slug],
+        });
       } else {
         queryClient.invalidateQueries({ queryKey: ["blog", variables.slug] });
       }
 
-      // Actualizar el cache directamente para mejor UX
-      queryClient.setQueryData(["blog", updatedBlog.slug], updatedBlog);
+      // Actualizar cache directamente
+      if (updatedBlog) {
+        queryClient.setQueryData(["blog", updatedBlog.slug], updatedBlog);
+      }
     },
   });
 };

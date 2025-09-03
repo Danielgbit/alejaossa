@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Blog } from "@/types/blog";
+import { supabase } from "@/supabase/client";
 
 interface CreateBlogFormProps {
   onSuccess?: (blog: Blog) => void;
@@ -53,33 +54,23 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
     setError(null);
 
     try {
-      const response = await fetch("/api/blogs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const { data, error } = await supabase
+        .from("blogs")
+        .insert({
           ...formData,
           date: new Date().toISOString(),
-        }),
-      });
+        })
+        .select()
+        .single();
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      if (error) throw error;
+
+      if (data && onSuccess) {
+        onSuccess(data as Blog);
+        router.push("/blog");
       }
-
-      const newBlog: Blog = await response.json();
-
-      // Ejecutar callback de éxito si existe
-      if (onSuccess) {
-        console.log("Blog creado:", newBlog);
-        onSuccess(newBlog);
-      } else {
-        // Redirigir al dashboard por defecto
-        router.push("/dashboard");
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Error desconocido");
+    } catch (err: any) {
+      setError(err.message);
     } finally {
       setIsLoading(false);
     }

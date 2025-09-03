@@ -102,6 +102,8 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           alt={blog.title}
           fill
           className="object-cover"
+          sizes="100%"
+          priority
         />
       </div>
 
