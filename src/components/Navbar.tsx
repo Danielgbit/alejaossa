@@ -190,8 +190,8 @@ const Navbar = () => {
                 Ingresar
               </Link>
             )}
-            <a href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw">
-              <button className="button-01 bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full w-[50%] px-3 py-2 text-xs mx-auto  font-lexend">
+            <a className="button-01 w-[50%] text-center mx-auto bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full px-3 py-2 text-xs font-lexend" href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw">
+              <button >
                 Hablemos
               </button>
             </a>
