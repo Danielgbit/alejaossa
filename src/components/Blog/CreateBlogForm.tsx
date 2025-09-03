@@ -47,7 +47,6 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
       }));
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -69,8 +68,12 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
         onSuccess(data as Blog);
         router.push("/blog");
       }
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Error desconocido");
+      }
     } finally {
       setIsLoading(false);
     }
