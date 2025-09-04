@@ -20,7 +20,7 @@ export default function SocialShareButtons({ blog }: SocialShareButtonsProps) {
   const socialLinks = {
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(currentUrl)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText + " " + currentUrl)}`,
   };
 
   const copyToClipboard = async () => {
@@ -54,7 +54,7 @@ export default function SocialShareButtons({ blog }: SocialShareButtonsProps) {
           <FacebookIcon size={18} />
         </a>
         <a
-          href={socialLinks.linkedin}
+          href={socialLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="text-purple-700 hover:text-purple-500 transition-colors"
