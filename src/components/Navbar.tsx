@@ -101,9 +101,9 @@ const Navbar = () => {
                   >
                     Dashboard
                   </Link>
-                  <li className="list-none">
+                  <div className="list-none">
                     <Logout />
-                  </li>
+                  </div>
                 </>
               ) : (
                 <Link
