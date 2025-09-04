@@ -16,9 +16,7 @@ export default function BlogList() {
     <div className="space-y-12 my-25 px-4 sm:px-6 lg:px-8">
       {/* Título */}
       <div className="bg-gradient-01 rounded-full w-fit px-8 sm:px-12 py-3 mx-auto">
-        <h2
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-01 font-cormorant text-center uppercase tracking-title"
-        >
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-01 font-cormorant text-center uppercase tracking-title">
           Blogs
         </h2>
       </div>

@@ -169,28 +169,27 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
             Leer artículo →
           </Link>
           
-          {/* Iconos de compartir en la parte inferior */}
           <div className="flex gap-1">
             <button 
               onClick={() => shareOnSocialMedia("twitter")}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 hover:bg-purple-300 rounded-full transition-colors"
               aria-label="Compartir en Twitter"
             >
-              <Twitter size={16} className="text-blue-400" />
+              <Twitter size={16} className="text-purple-800" />
             </button>
             <button 
               onClick={() => shareOnSocialMedia("facebook")}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 hover:bg-purple-300 rounded-full transition-colors"
               aria-label="Compartir en Facebook"
             >
-              <Facebook size={16} className="text-blue-600" />
+              <Facebook size={16} className="text-purple-800" />
             </button>
             <button 
               onClick={() => shareOnSocialMedia("whatsapp")}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 hover:bg-purple-300 rounded-full transition-colors"
               aria-label="Compartir en WhatsApp"
             >
-              <MessageCircle size={16} className="text-green-500" />
+              <MessageCircle size={16} className="text-purple-800" />
             </button>
           </div>
         </div>
