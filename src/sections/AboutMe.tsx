@@ -5,7 +5,7 @@ import Motivational from "@/components/Motivational";
 
 const AboutMe = () => {
   return (
-    <section className="flex flex-col rounded-4xl shadow-xl mx-1 md:flex-row items-center my-20 md:my-40 lg:my-60 px-5 bg-dark-04 pt-10 md:pt-20 lg:pt-50 pb-10 md:pb-20">
+    <section id='about' className="flex flex-col rounded-4xl shadow-xl mx-1 md:flex-row items-center my-20 md:my-40 lg:my-60 px-5 bg-dark-04 pt-10 md:pt-20 lg:pt-50 pb-10 md:pb-20">
       <div className="flex flex-col relative mb-10 md:mb-0 md:w-1/2 flex-shrink-0 items-center">
         <Image
           src={avatar}

@@ -66,10 +66,9 @@ const Navbar = () => {
             href="/"
             className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light"
           >
-            Aleja Ossa
+            Aleja de la Ossa
           </Link>
 
-          {/* Menu para desktop */}
           <ul
             className={`md:flex justify-between font-lexend font-semilight hidden w-[40%]
             }`}

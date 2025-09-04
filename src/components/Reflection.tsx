@@ -23,7 +23,7 @@ const Reflection = ({ children = "", textButton = "" }) => {
 
       {/* Autor */}
       <span className="my-6 md:my-8 lg:my-10 font-lexend uppercase tracking-sub text-dark-04">
-        -Aleja Ossa
+        -Aleja de la Ossa
       </span>
 
       {/* Botón */}

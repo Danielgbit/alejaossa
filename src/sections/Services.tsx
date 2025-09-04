@@ -10,7 +10,7 @@ const Services = () => {
   const limitedServices = services.slice(0, 3);
 
   return (
-    <section className="py-12 md:py-16 bg-light">
+    <section id="services" className="py-12 md:py-16 bg-light">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-5xl lg:text-7xl text-dark-01 font-cormorant font-semibold tracking-title text-center text-primary mb-8 md:mb-12">
           Servicios
