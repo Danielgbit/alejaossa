@@ -93,7 +93,7 @@ const Navbar = () => {
                 Servicios
               </Link>
               <Link
-                href="#products"
+                href="/#products"
                 className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
               >
                 Productos
@@ -173,7 +173,7 @@ const Navbar = () => {
               Servicios
             </Link>
             <Link
-              href="#products"
+              href="/#products"
               className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
             >
               Productos
