@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Blog } from "@/types/blog";
 import { supabase } from "@/supabase/client";
+import { parseDriveLink } from "@/utils/parseDriveLink";
 
 interface CreateBlogFormProps {
   onSuccess?: (blog: Blog) => void;
@@ -27,18 +28,25 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    let newValue = value;
+
+    // 🔹 Convertir automáticamente enlaces de Google Drive
+    if (name === "imageUrl") {
+      newValue = parseDriveLink(value);
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: newValue,
     }));
 
-    // Auto-generar slug desde el título
+    // 🔹 Auto-generar slug desde el título
     if (name === "title") {
       const generatedSlug = value
         .toLowerCase()
-        .replace(/[^a-z0-9 -]/g, "") // Eliminar caracteres inválidos
-        .replace(/\s+/g, "-") // Reemplazar espacios con guiones
-        .replace(/-+/g, "-") // Reemplazar múltiples guiones con uno solo
+        .replace(/[^a-z0-9 -]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
         .trim();
 
       setFormData((prev) => ({
@@ -47,6 +55,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
       }));
     }
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -171,7 +180,7 @@ function CreateBlogForm({ onSuccess, onCancel }: CreateBlogFormProps) {
             onChange={handleChange}
             required
             className="w-full px-3 py-2 border border-purple-500 font-lexend text-xs border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-            placeholder="https://ejemplo.com/imagen.jpg"
+            placeholder="Pega aquí el enlace de tu imagen (Pexels, Drive, etc.)"
           />
         </div>
 
