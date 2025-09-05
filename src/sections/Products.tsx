@@ -7,7 +7,7 @@ import React from "react";
 
 const Products = () => {
   return (
-    <section className="py-8 bg-light-02 rounded-4xl md:py-12 bg-light shadow-xl">
+    <section id="products" className="py-8 bg-light-02 rounded-4xl md:py-12 bg-light shadow-xl">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <h2 className="text-xl md:text-2xl lg:text-5xl text-dark-01 font-cormorant font-semibold tracking-title text-center text-primary mb-8 md:mb-12">
           {" "}

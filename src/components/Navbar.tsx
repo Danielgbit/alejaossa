@@ -64,40 +64,46 @@ const Navbar = () => {
         <div className="container flex justify-between w-full items-center text-dark-02">
           <Link
             href="/"
-            className="uppercase md:w-[20%] w-[50%] text-xl md:text-3xl tracking-brand font-light"
+            className="uppercase w-[80%] md:w-[20%] text-xl md:text-xl tracking-brand font-light"
           >
             Aleja de la Ossa
           </Link>
 
           <ul
-            className={`md:flex justify-between font-lexend font-semilight hidden w-[40%]
+            className={`md:flex justify-between font-lexend font-semilight hidden w-[50%]
             }`}
           >
             <li className="flex justify-between w-full items-center">
               <Link
                 href="/"
-                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+                className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
               >
                 Inicio
               </Link>
               <Link
                 href="/blog"
-                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+                className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
               >
                 Blogs
               </Link>
               <Link
                 href="/services"
-                className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+                className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
               >
                 Servicios
+              </Link>
+              <Link
+                href="#products"
+                className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
+              >
+                Productos
               </Link>
 
               {session?.user ? (
                 <>
                   <Link
                     href="dashboard"
-                    className="text-hover-light-01 text-sm hover:text-blue-600 transition-colors"
+                    className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
                   >
                     Dashboard
                   </Link>
@@ -108,7 +114,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   href="/login"
-                  className="text-purple-800 hover:text-purple-800 text-sm flex gap-2 bg-purple-200 hover:bg-purple-300 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
+                  className="text-purple-800 hover:text-purple-800 text-xs flex gap-2 bg-purple-200 hover:bg-purple-300 px-5 py-1 rounded-full hover:bg-light-01 transition-colors"
                 >
                   Ingresar
                 </Link>
@@ -148,23 +154,29 @@ const Navbar = () => {
           <div className="flex flex-col space-y-6">
             <Link
               href="/"
-              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+              className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inicio
             </Link>
             <Link
               href="/blog"
-              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+              className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blogs
             </Link>
             <Link
               href="/services"
-              className="text-hover-light-01 text-sm font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+              className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
             >
               Servicios
+            </Link>
+            <Link
+              href="#products"
+              className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+            >
+              Productos
             </Link>
 
             {session?.user ? (
@@ -189,10 +201,11 @@ const Navbar = () => {
                 Ingresar
               </Link>
             )}
-            <a className="button-01 w-[50%] text-center mx-auto bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full px-3 py-2 text-xs font-lexend" href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw">
-              <button >
-                Hablemos
-              </button>
+            <a
+              className="button-01 w-[50%] text-center mx-auto bg-dark-03 tracking-[-0.5px] text-light-02 rounded-full px-3 py-2 text-xs font-lexend"
+              href="https://api.whatsapp.com/send?phone=573014965788&text=%F0%9F%A7%9A%E2%80%8D%E2%99%80%EF%B8%8FHola+Aleja%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre...%E2%98%98%EF%B8%8F&fbclid=PAAaZ5NGAuzGkBSWB4IH3znjFbmn49elvRgjdwRm3rSDHY0RRFX_wpovVvfrw"
+            >
+              <button>Hablemos</button>
             </a>
           </div>
         </div>
