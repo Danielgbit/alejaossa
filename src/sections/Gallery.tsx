@@ -8,8 +8,19 @@ import "swiper/css/navigation";
 import galleryImages from "@/data/gallery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { useRef, useEffect } from "react";
 
 const Gallery = () => {
+  const swiperRef = useRef<any>(null);
+
+  useEffect(() => {
+    return () => {
+      if (swiperRef.current) {
+        swiperRef.current.destroy(true, true);
+      }
+    };
+  }, []);
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -52,6 +63,9 @@ const Gallery = () => {
               1024: { slidesPerView: 3 },
             }}
             modules={[Autoplay, Pagination, Navigation]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper; // capturamos instancia real
+            }}
             className="mySwiper rounded-2xl overflow-hidden"
           >
             {galleryImages.map((image, index) => (
