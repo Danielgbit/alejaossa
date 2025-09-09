@@ -10,7 +10,7 @@ const Reflection = ({ children = "", textButton = "" }) => {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.1 }}
-      className="my-20 md:my-40 lg:my-60 flex flex-col items-center justify-center 
+      className="my-20 md:my-10 lg:my-60 flex flex-col items-center justify-center 
                 py-10 md:py-16 lg:py-20 px-4 rounded-lg shadow-lg bg-reflection-01"
     >
       {/* Texto principal */}

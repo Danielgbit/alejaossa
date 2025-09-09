@@ -70,7 +70,7 @@ const Navbar = () => {
           </Link>
 
           <ul
-            className={`md:flex justify-between font-lexend font-semilight hidden w-[50%]
+            className={`md:flex justify-between font-lexend font-semilight hidden w-[55%]
             }`}
           >
             <li className="flex justify-between w-full items-center">
@@ -79,6 +79,12 @@ const Navbar = () => {
                 className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
               >
                 Inicio
+              </Link>
+              <Link
+                href="/#contact"
+                className="text-hover-light-01 text-xs hover:text-blue-600 transition-colors"
+              >
+                Contacto
               </Link>
               <Link
                 href="/blog"
@@ -158,6 +164,13 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inicio
+            </Link>
+            <Link
+              href="/#contact"
+              className="text-hover-light-01 text-xs font-lexend tracking-brand text-center text-dark-03 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contacto
             </Link>
             <Link
               href="/blog"

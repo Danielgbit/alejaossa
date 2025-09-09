@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Facebook, Instagram, Mail, Music2 } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -67,6 +67,14 @@ const Footer = () => {
               className="hover:text-accent transition"
             >
               <Facebook size={22} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@alejadelaossa7?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition"
+            >
+              <Music2 size={22} />
             </a>
             <a
               href="https://www.instagram.com/alejadelaossa7?igsh=MWQ3eHN3Z2hmbWx5aw=="

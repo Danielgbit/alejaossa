@@ -56,7 +56,7 @@ export default function TestimonialCarousel({}) {
   }, []);
 
   return (
-    <div className="swiper my-20 md:my-50 px-4 w-full">
+    <div className="swiper my-20 md:mt-40 px-4 w-full">
       {/* Título */}
       <span className="font-cormorant text-3xl md:text-5xl lg:text-7xl text-center block tracking-title text-dark-01">
         Testimonios
@@ -71,7 +71,6 @@ export default function TestimonialCarousel({}) {
         ))}
       </div>
 
-      {/* Controles */}
       {/* Controles */}
       <div className="swiper-pagination"></div>
       <div className="hidden md:block swiper-button-next"></div>
