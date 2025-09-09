@@ -27,7 +27,7 @@ const Gallery = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="px-4 mb-30 bg-purple-200 rounded-4xl md:py-50"
+      className="px-4 py-20 mb-30 bg-purple-200 rounded-4xl"
     >
       <div className="container mx-auto max-w-7xl">
         <motion.h2

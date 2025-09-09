@@ -81,7 +81,7 @@ const Podcast = () => {
                 viewport={{ once: true }}
                 className="mt-6 text-center"
               >
-                <h3 className="text-lg font-semibold tracking-title text-dark-02 mb-2">Nuevos episodios cada semana</h3>
+                <h3 className="text-lg font-semibold tracking-title text-dark-02 mb-2">Nuevos episodios</h3>
                 <p className="text-dark-02 tracking-sub text-xs">No te pierdas nuestros contenidos exclusivos</p>
               </motion.div>
             </motion.div>
